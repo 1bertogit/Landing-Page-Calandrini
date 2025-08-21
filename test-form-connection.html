@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Conexão do Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .test-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #5E3CEA;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #5E3CEA;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+        }
+        button {
+            background: linear-gradient(135deg, #5E3CEA, #4E33C4);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success { background: #4ade80; color: #000; }
+        .error { background: #ef4444; color: #fff; }
+        .info { background: #3b82f6; color: #fff; }
+        .data-display {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste de Conexão do Formulário</h1>
+    
+    <div class="test-section">
+        <h2>Formulário de Teste</h2>
+        <p>Este formulário simula o comportamento do formulário da index.html</p>
+        
+        <form id="testForm">
+            <div class="form-group">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required placeholder="Dr. João Silva">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="joao@exemplo.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+55 11 99999-9999">
+            </div>
+            
+            <button type="submit" id="submitBtn">Testar Envio</button>
+        </form>
+        
+        <div id="status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Dados Armazenados</h2>
+        <p>Dados que serão enviados para a página obrigado.html:</p>
+        <div id="dataDisplay" class="data-display">Nenhum dado ainda...</div>
+        
+        <button onclick="clearData()" style="margin-top: 10px; background: #ef4444;">Limpar Dados</button>
+        <button onclick="goToThankYou()" style="margin-top: 10px; background: #22c55e;">Ir para Página Obrigado</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Instruções</h2>
+        <ol>
+            <li>Preencha o formulário acima</li>
+            <li>Clique em "Testar Envio"</li>
+            <li>Verifique se os dados aparecem na seção "Dados Armazenados"</li>
+            <li>Clique em "Ir para Página Obrigado" para testar o redirecionamento</li>
+            <li>Na página obrigado.html, verifique se o nome aparece personalizado</li>
+        </ol>
+    </div>
+
+    <script>
+        // Simulate the same form handling as in main.js
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const button = document.getElementById('submitBtn');
+            const status = document.getElementById('status');
+            const dataDisplay = document.getElementById('dataDisplay');
+            
+            // Show loading state
+            button.disabled = true;
+            button.textContent = 'Processando...';
+            status.innerHTML = '<div class="info">Processando formulário...</div>';
+            
+            try {
+                // Collect form data
+                const formData = new FormData(e.target);
+                const leadData = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    whatsapp: formData.get('whatsapp'),
+                    timestamp: new Date().toISOString(),
+                    source: 'test-form',
+                    page: 'test-form-connection.html',
+                    language: 'pt-BR',
+                    utm_source: new URLSearchParams(window.location.search).get('utm_source'),
+                    utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
+                    utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign')
+                };
+
+                // Store data in localStorage
+                localStorage.setItem('leadData', JSON.stringify(leadData));
+                
+                // Display the data
+                dataDisplay.textContent = JSON.stringify(leadData, null, 2);
+                
+                // Show success
+                button.textContent = 'Sucesso!';
+                button.style.background = 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)';
+                status.innerHTML = '<div class="success">✅ Dados salvos com sucesso! Agora você pode ir para a página obrigado.html</div>';
+                
+                // Reset button after delay
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.textContent = 'Testar Envio';
+                    button.style.background = '';
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                status.innerHTML = '<div class="error">❌ Erro ao processar formulário: ' + error.message + '</div>';
+                
+                button.disabled = false;
+                button.textContent = 'Erro - Tente novamente';
+                button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                
+                setTimeout(() => {
+                    button.textContent = 'Testar Envio';
+                    button.style.background = '';
+                }, 3000);
+            }
+        });
+        
+        // Function to clear stored data
+        function clearData() {
+            localStorage.removeItem('leadData');
+            document.getElementById('dataDisplay').textContent = 'Dados limpos!';
+            document.getElementById('status').innerHTML = '<div class="info">Dados removidos do localStorage</div>';
+        }
+        
+        // Function to go to thank you page
+        function goToThankYou() {
+            const leadData = localStorage.getItem('leadData');
+            if (!leadData) {
+                alert('Nenhum dado encontrado! Preencha e envie o formulário primeiro.');
+                return;
+            }
+            
+            window.location.href = 'obrigado.html';
+        }
+        
+        // Display existing data on page load
+        window.addEventListener('load', function() {
+            const existingData = localStorage.getItem('leadData');
+            if (existingData) {
+                document.getElementById('dataDisplay').textContent = JSON.stringify(JSON.parse(existingData), null, 2);
+                document.getElementById('status').innerHTML = '<div class="info">Dados existentes encontrados no localStorage</div>';
+            }
+        });
+    </script>
+</body>
+</html>

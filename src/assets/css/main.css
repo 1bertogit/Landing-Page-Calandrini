@@ -1,0 +1,557 @@
+/* ==============================================
+   CALANDRINI - Premium Medical Landing Page
+   Main Stylesheet
+   ============================================== */
+
+/* ---------------------------------------------
+   1. CSS Variables & Root Settings
+   --------------------------------------------- */
+:root {
+    --dim-gray: #777076;
+    --rich-black: #03030D;
+    --periwinkle: #C7C2DF;
+    --majorelle-blue: #5E3CEA;
+    --palatinate-blue: #4E33C4;
+}
+
+/* ---------------------------------------------
+   2. Base Typography
+   --------------------------------------------- */
+* { 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3 { 
+    font-family: 'Cormorant Garamond', serif !important; 
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------------------
+   3. Body & Background
+   --------------------------------------------- */
+body {
+    background: #03030D;
+    color: #C7C2DF;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(94, 60, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(78, 51, 196, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(199, 194, 223, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    animation: bgGradientShift 8s ease-in-out infinite;
+}
+
+/* ---------------------------------------------
+   4. Luxury Components
+   --------------------------------------------- */
+.luxury-gradient {
+    background: linear-gradient(180deg, rgba(94, 60, 234, 0.2) 0%, rgba(78, 51, 196, 0.1) 50%, transparent 100%);
+}
+
+.text-luxury {
+    background: linear-gradient(135deg, #C7C2DF 0%, #5E3CEA 50%, #C7C2DF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer-luxury 5s linear infinite;
+}
+
+.card-luxury {
+    background: linear-gradient(135deg, rgba(3, 3, 13, 0.95) 0%, rgba(30, 20, 60, 0.95) 100%);
+    border: 1px solid rgba(199, 194, 223, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(199, 194, 223, 0.3), transparent);
+    animation: scan-luxury 4s linear infinite;
+}
+
+/* ---------------------------------------------
+   5. Buttons
+   --------------------------------------------- */
+.btn-luxury {
+    background: linear-gradient(135deg, #5E3CEA 0%, #4E33C4 100%);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.btn-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.8s;
+}
+
+.btn-luxury:hover::before {
+    left: 100%;
+}
+
+.btn-luxury:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(94, 60, 234, 0.3);
+}
+
+/* ---------------------------------------------
+   6. Form Inputs
+   --------------------------------------------- */
+.input-luxury {
+    background: rgba(3, 3, 13, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba(199, 194, 223, 0.2);
+    color: #C7C2DF;
+    padding: 15px 0;
+    transition: all 0.4s ease;
+}
+
+.input-luxury:focus {
+    border-bottom-color: #5E3CEA;
+    background: rgba(3, 3, 13, 0.7);
+    outline: none;
+}
+
+.input-luxury::placeholder {
+    color: #777076;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+}
+
+/* ---------------------------------------------
+   7. Dividers & Decorative Elements
+   --------------------------------------------- */
+.divider-luxury {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(94, 60, 234, 0.3), rgba(199, 194, 223, 0.2), rgba(94, 60, 234, 0.3), transparent);
+    margin: 60px auto;
+    max-width: 600px;
+}
+
+.texture-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C7C2DF' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* ---------------------------------------------
+   8. Special Components
+   --------------------------------------------- */
+.badge-luxury {
+    background: transparent;
+    border: 1px solid rgba(199, 194, 223, 0.3);
+    color: #C7C2DF;
+    padding: 8px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    animation: badgePulse 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.number-luxury {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+    background: linear-gradient(135deg, #C7C2DF 0%, #5E3CEA 50%, #C7C2DF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: numberShimmer 3s linear infinite;
+}
+
+/* ---------------------------------------------
+   9. Audience Section
+   --------------------------------------------- */
+.audience-card {
+    background: linear-gradient(135deg, rgba(3, 3, 13, 0.95) 0%, rgba(30, 20, 60, 0.7) 100%);
+    border: 1px solid rgba(199, 194, 223, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(20px);
+}
+
+.audience-card.approved {
+    border-color: rgba(94, 60, 234, 0.3);
+}
+
+.audience-card.rejected {
+    border-color: rgba(119, 112, 118, 0.2);
+    opacity: 0.4;
+}
+
+.audience-card:hover {
+    transform: translateX(10px);
+}
+
+.audience-card.approved:hover {
+    box-shadow: 
+        -10px 0 40px rgba(94, 60, 234, 0.3),
+        0 0 60px rgba(199, 194, 223, 0.1);
+    border-color: rgba(94, 60, 234, 0.5);
+}
+
+.profession-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(94, 60, 234, 0.2) 0%, rgba(199, 194, 223, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.audience-card:hover .profession-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(94, 60, 234, 0.3) 0%, rgba(199, 194, 223, 0.2) 100%);
+}
+
+.expertise-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(94, 60, 234, 0.1);
+    border: 1px solid rgba(94, 60, 234, 0.2);
+    border-radius: 12px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 8px;
+}
+
+.audience-divider {
+    position: relative;
+    height: 400px;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(94, 60, 234, 0.3) 20%,
+        rgba(199, 194, 223, 0.2) 50%,
+        rgba(94, 60, 234, 0.3) 80%,
+        transparent
+    );
+}
+
+/* ---------------------------------------------
+   10. Mentor Section
+   --------------------------------------------- */
+.mentor-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.mentor-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(94, 60, 234, 0.1) 0%, transparent 40%);
+    animation: rotate 20s linear infinite;
+}
+
+.mentor-image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.mentor-image-frame {
+    position: absolute;
+    inset: -20px;
+    border: 2px solid rgba(94, 60, 234, 0.3);
+    border-radius: 50%;
+    animation: frameRotate 15s linear infinite;
+}
+
+.mentor-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(3, 3, 13, 0.9);
+    box-shadow: 
+        0 0 40px rgba(94, 60, 234, 0.3),
+        0 0 80px rgba(199, 194, 223, 0.1);
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, rgba(3, 3, 13, 0.8) 0%, rgba(30, 20, 60, 0.6) 100%);
+    border: 1px solid rgba(199, 194, 223, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(94, 60, 234, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.achievement-card:hover::before {
+    left: 100%;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(94, 60, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(94, 60, 234, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -30px;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(94, 60, 234, 0.3), transparent);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -4px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #5E3CEA;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(94, 60, 234, 0.5);
+}
+
+.expertise-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(94, 60, 234, 0.1);
+    border: 1px solid rgba(94, 60, 234, 0.2);
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 4px 4px 0;
+    transition: all 0.3s;
+}
+
+.expertise-tag:hover {
+    background: rgba(94, 60, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.quote-mark {
+    font-size: 4rem;
+    color: rgba(94, 60, 234, 0.2);
+    line-height: 0;
+    margin-bottom: -20px;
+}
+
+/* ---------------------------------------------
+   11. Method Section
+   --------------------------------------------- */
+.method-card {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-10px);
+}
+
+.method-card .card-luxury {
+    transition: all 0.3s ease;
+}
+
+.method-card:hover .card-luxury {
+    background: linear-gradient(135deg, rgba(94, 60, 234, 0.05), transparent);
+    border-color: rgba(94, 60, 234, 0.3);
+}
+
+/* ---------------------------------------------
+   12. Statistics
+   --------------------------------------------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(3, 3, 13, 0.5);
+    border: 1px solid rgba(199, 194, 223, 0.1);
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 300;
+    background: linear-gradient(135deg, #C7C2DF 0%, #5E3CEA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.mentor-stat {
+    position: relative;
+    padding: 30px;
+    background: rgba(3, 3, 13, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(199, 194, 223, 0.1);
+    transition: all 0.3s;
+}
+
+.mentor-stat:hover {
+    transform: scale(1.05);
+    border-color: rgba(94, 60, 234, 0.3);
+    background: rgba(3, 3, 13, 0.7);
+}
+
+.mentor-stat-number {
+    font-size: 3rem;
+    font-weight: 300;
+    background: linear-gradient(135deg, #C7C2DF 0%, #5E3CEA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.mentor-stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.mentor-stat-detail {
+    font-size: 10px;
+    opacity: 0.5;
+    margin-top: 8px;
+}
+
+/* ---------------------------------------------
+   13. Utility Classes
+   --------------------------------------------- */
+.float-luxury {
+    animation: float-luxury 8s ease-in-out infinite;
+}
+
+.parallax {
+    transition: transform 0.3s ease-out;
+}
+
+.text-periwinkle {
+    color: #C7C2DF;
+}
+
+.from-majorelle-blue {
+    --tw-gradient-from: #5E3CEA;
+}
+
+.from-periwinkle {
+    --tw-gradient-from: #C7C2DF;
+}
+
+/* ---------------------------------------------
+   14. i18n Language Selector
+   --------------------------------------------- */
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(3, 3, 13, 0.9);
+    border: 1px solid rgba(199, 194, 223, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.language-selector select {
+    background: transparent;
+    color: #C7C2DF;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-selector select option {
+    background: #03030D;
+    color: #C7C2DF;
+}
+
+.language-flag {
+    width: 20px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}

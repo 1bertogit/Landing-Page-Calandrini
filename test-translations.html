@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Traduções - Face & Nose Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        .key {
+            color: #5E3CEA;
+            font-weight: bold;
+        }
+        .missing {
+            background: #ff4444 !important;
+            color: white;
+        }
+        .working {
+            background: #44ff44 !important;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="language-selector">
+            <option value="pt-BR">🇧🇷 Português</option>
+            <option value="en-US">🇺🇸 English</option>
+            <option value="es-ES">🇪🇸 Español</option>
+        </select>
+    </div>
+
+    <h1>Teste de Traduções - Face & Nose Code</h1>
+    
+    <!-- Hero Section Test -->
+    <div class="test-section">
+        <h2>Hero Section</h2>
+        <div class="test-item">
+            <span class="key">course.hero.title:</span>
+            <span data-i18n="course.hero.title">Face & Nose Code</span>
+        </div>
+        <div class="test-item">
+            <span class="key">course.hero.subtitle:</span>
+            <span data-i18n="course.hero.subtitle">O Único Protocolo Para Realizar</span>
+        </div>
+        <div class="test-item">
+            <span class="key">course.hero.highlight:</span>
+            <span data-i18n="course.hero.highlight">6 Procedimentos na Face em Uma Sessão</span>
+        </div>
+        <div class="test-item">
+            <span class="key">course.hero.cta:</span>
+            <span data-i18n="course.hero.cta">QUERO MINHA VAGA AGORA!</span>
+        </div>
+    </div>
+
+    <!-- Meta Information Test -->
+    <div class="test-section">
+        <h2>Meta Information</h2>
+        <div class="test-item">
+            <span class="key">meta.title:</span>
+            <span data-i18n="meta.title">Masterclass Procedimentos Combinados em Cirurgia Facial</span>
+        </div>
+        <div class="test-item">
+            <span class="key">meta.description:</span>
+            <span data-i18n="meta.description">Aumente seu faturamento em 30% dominando as técnicas mais avançadas</span>
+        </div>
+    </div>
+
+    <!-- Pillars Section Test -->
+    <div class="test-section">
+        <h2>5 Pillars Section</h2>
+        <div class="test-item">
+            <span class="key">pillars.title:</span>
+            <span data-i18n="pillars.title">5 Pilares da Excelência</span>
+        </div>
+        <div class="test-item">
+            <span class="key">pillars.items[0].title:</span>
+            <span data-i18n="pillars.items[0].title">ORQUESTRAÇÃO FACIAL</span>
+        </div>
+        <div class="test-item">
+            <span class="key">pillars.items[1].title:</span>
+            <span data-i18n="pillars.items[1].title">RESULTADOS HARMÔNICOS</span>
+        </div>
+    </div>
+
+    <!-- Method Section Test -->
+    <div class="test-section">
+        <h2>Method Section</h2>
+        <div class="test-item">
+            <span class="key">method.title:</span>
+            <span data-i18n="method.title">Método Face & Nose Code</span>
+        </div>
+        <div class="test-item">
+            <span class="key">method.validation:</span>
+            <span data-i18n="method.validation">MÉTODO VALIDADO POR +500 CIRURGIAS</span>
+        </div>
+    </div>
+
+    <!-- Course Specific Tests -->
+    <div class="test-section">
+        <h2>Course Page Specific</h2>
+        <div class="test-item">
+            <span class="key">course.attention.title:</span>
+            <span data-i18n="course.attention.title">Você Já Pensou Nessas Questões?</span>
+        </div>
+        <div class="test-item">
+            <span class="key">course.solution.title:</span>
+            <span data-i18n="course.solution.title">A Solução Face & Nose Code</span>
+        </div>
+        <div class="test-item">
+            <span class="key">course.investment.title:</span>
+            <span data-i18n="course.investment.title">Investimento</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+    <script src="src/assets/js/i18n.js"></script>
+    
+    <script>
+        // Initialize i18n system
+        document.addEventListener("DOMContentLoaded", function () {
+            // Small delay to ensure all scripts are loaded
+            setTimeout(function () {
+                if (window.i18n && window.i18n.applyTranslations) {
+                    window.i18n.applyTranslations();
+                    
+                    // Test translation coverage
+                    testTranslationCoverage();
+                } else {
+                    console.error('i18n system not loaded');
+                }
+            }, 100);
+        });
+
+        function testTranslationCoverage() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            let working = 0;
+            let missing = 0;
+
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const originalText = element.textContent;
+                
+                // Check if translation was applied (text changed from original)
+                if (element.textContent !== originalText || element.textContent.trim() !== '') {
+                    element.classList.add('working');
+                    working++;
+                } else {
+                    element.classList.add('missing');
+                    missing++;
+                }
+            });
+
+            console.log(`Translation Test Results:`);
+            console.log(`Working: ${working}`);
+            console.log(`Missing: ${missing}`);
+            console.log(`Total: ${elements.length}`);
+        }
+    </script>
+</body>
+</html>

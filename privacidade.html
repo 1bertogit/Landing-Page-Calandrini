@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Face & Nose Code</title>
+    <meta name="description" content="Política de privacidade e proteção de dados do curso Face & Nose Code">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/animations.css">
+    <link rel="stylesheet" href="src/assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        body {
+            background: #03030D;
+            color: #C7C2DF;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(3, 3, 13, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #5E3CEA, #4E33C4);
+            border-radius: 5px;
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(3, 3, 13, 0.95) 0%, rgba(30, 20, 60, 0.95) 100%);
+            border: 1px solid rgba(199, 194, 223, 0.1);
+            backdrop-filter: blur(20px);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(94, 60, 234, 0.3), rgba(199, 194, 223, 0.2), rgba(94, 60, 234, 0.3), transparent);
+            margin: 2rem 0;
+        }
+        
+        .lgpd-badge {
+            background: linear-gradient(135deg, rgba(94, 60, 234, 0.1), rgba(78, 51, 196, 0.05));
+            border: 1px solid rgba(94, 60, 234, 0.3);
+        }
+        
+        .rights-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="texture-overlay"></div>
+    
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+        <select id="language-selector" class="bg-black/50 text-white px-4 py-2 rounded-lg border border-purple-500/30">
+            <option value="pt-BR">🇧🇷 Português</option>
+            <option value="en-US">🇺🇸 English</option>
+            <option value="es-ES">🇪🇸 Español</option>
+        </select>
+    </div>
+
+    <!-- Header -->
+    <div class="relative overflow-hidden">
+        <div class="luxury-gradient absolute inset-0"></div>
+        <div class="relative z-10 py-20 text-center">
+            <h1 class="text-5xl lg:text-7xl mb-4 text-luxury" data-i18n="privacy.title">
+                Política de Privacidade
+            </h1>
+            <p class="text-xl text-gray-400" data-i18n="privacy.subtitle">
+                Seu direito à privacidade é nossa prioridade
+            </p>
+        </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="max-w-5xl mx-auto px-4 py-12">
+        <div class="glass-card rounded-2xl p-8 lg:p-12">
+            
+            <!-- LGPD Compliance Badge -->
+            <div class="lgpd-badge p-6 rounded-lg mb-8">
+                <div class="flex items-start gap-4">
+                    <svg class="w-8 h-8 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-xl text-white mb-2" data-i18n="privacy.lgpd.title">Conformidade com a LGPD</h3>
+                        <p class="text-gray-400" data-i18n="privacy.lgpd.text">
+                            Esta Política de Privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) 
+                            e descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="privacy.section1.title">
+                    1. Controlador de Dados
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="privacy.section1.text">
+                    O controlador dos dados pessoais coletados através deste site é:
+                </p>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span><strong class="text-white">Nome:</strong> Dr. Alexandre Calandrini</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span><strong class="text-white">CNPJ:</strong> XX.XXX.XXX/0001-XX</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span><strong class="text-white">Endereço:</strong> São Paulo, SP</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span><strong class="text-white">E-mail:</strong> privacidade@facennosecode.com.br</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 2 -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="privacy.section2.title">
+                    2. Dados Coletados
+                </h2>
+                
+                <h3 class="text-xl text-white mb-3 mt-6" data-i18n="privacy.section2.subtitle1">Dados fornecidos diretamente:</h3>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.item1">Nome completo</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.item2">E-mail</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.item3">Telefone/WhatsApp</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.item4">CRM (Conselho Regional de Medicina)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.item5">Especialidade médica</span>
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl text-white mb-3 mt-6" data-i18n="privacy.section2.subtitle2">Dados coletados automaticamente:</h3>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.auto1">Endereço IP</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.auto2">Tipo de navegador e sistema operacional</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.auto3">Páginas visitadas e tempo de permanência</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.auto4">Origem do tráfego (referrer)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-i18n="privacy.section2.auto5">Cookies e tecnologias similares</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 3 - Purpose -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="privacy.section3.title">
+                    3. Finalidade do Tratamento
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="privacy.section3.text">
+                    Utilizamos seus dados pessoais para:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400" data-i18n="privacy.section3.purpose1">Processar sua inscrição no curso</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400" data-i18n="privacy.section3.purpose2">Enviar informações sobre o curso</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400" data-i18n="privacy.section3.purpose3">Comunicação via e-mail e WhatsApp</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400" data-i18n="privacy.section3.purpose4">Emissão de certificados</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Your Rights -->
+            <section class="mb-8">
+                <div class="rights-card p-6 rounded-lg">
+                    <h2 class="text-3xl text-white mb-4" data-i18n="privacy.rights.title">
+                        Seus Direitos (LGPD)
+                    </h2>
+                    <p class="text-gray-400 mb-4" data-i18n="privacy.rights.text">
+                        De acordo com a LGPD, você tem direito a:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Confirmação:</strong> Saber se tratamos seus dados</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Acesso:</strong> Obter cópia dos seus dados</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Correção:</strong> Solicitar correção de dados</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Eliminação:</strong> Solicitar exclusão dos dados</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Portabilidade:</strong> Transferir dados</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong class="text-white">Revogação:</strong> Revogar consentimento</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Security -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="privacy.section7.title">
+                    Segurança dos Dados
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="privacy.section7.text">
+                    Implementamos medidas técnicas e organizacionais apropriadas:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Criptografia SSL/TLS</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Armazenamento seguro</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Monitoramento contínuo</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Backups regulares</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Contact -->
+            <section class="mb-8">
+                <div class="glass-card p-6 rounded-lg">
+                    <h2 class="text-2xl text-white mb-4" data-i18n="privacy.contact.title">
+                        Contato e DPO
+                    </h2>
+                    <p class="text-gray-400 mb-4" data-i18n="privacy.contact.text">
+                        Para exercer seus direitos ou esclarecer dúvidas:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-400">dpo@facennosecode.com.br</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-gray-400">(11) 99999-9999</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <div class="text-center mt-12">
+                <a href="index.html" class="btn-luxury inline-flex items-center gap-2 px-8 py-4 text-white rounded-lg">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 000-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-i18n="privacy.backButton">Voltar ao Início</span>
+                </a>
+                
+                <div class="mt-12 pt-8 border-t border-gray-800">
+                    <p class="text-luxury text-lg mb-4">
+                        Face & Nose Code
+                    </p>
+                    <p class="text-xs opacity-40 mb-6">
+                        © Dr. Alexandre Calandrini • Todos os direitos reservados
+                    </p>
+                    <div class="flex justify-center gap-12 text-xs tracking-wider mb-6">
+                        <a href="termos.html" class="opacity-40 hover:opacity-80 transition">TERMOS</a>
+                        <a href="privacidade.html" class="opacity-40 hover:opacity-80 transition">PRIVACIDADE</a>
+                    </div>
+                    <p class="text-xs opacity-40">
+                        Suporte: support@callandriniacademy.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+    <script src="src/assets/js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        document.addEventListener("DOMContentLoaded", function () {
+            // Small delay to ensure all scripts are loaded
+            setTimeout(function () {
+                if (window.i18n && window.i18n.applyTranslations) {
+                    window.i18n.applyTranslations();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

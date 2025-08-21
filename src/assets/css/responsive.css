@@ -1,0 +1,424 @@
+/* ==============================================
+   Responsive Design Improvements
+   ============================================== */
+
+/* Mobile First Approach */
+
+/* Extra Small Devices (< 576px) */
+@media (max-width: 575px) {
+    /* Typography adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    h1, .text-7xl {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    h2, .text-6xl, .text-5xl {
+        font-size: 2rem !important;
+        line-height: 1.3;
+    }
+    
+    h3, .text-4xl {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Hero Section Mobile */
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    /* Form adjustments */
+    #leadForm {
+        padding: 1rem;
+    }
+    
+    #leadForm input,
+    #leadForm select {
+        font-size: 16px; /* Prevent zoom on iOS */
+        padding: 1rem;
+    }
+    
+    /* Button adjustments */
+    .btn-luxury {
+        padding: 1rem 2rem;
+        font-size: 0.875rem;
+        width: 100%;
+    }
+    
+    /* Cards stack vertically */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    
+    /* Pillars section */
+    .pillars-section .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .number-luxury {
+        font-size: 2rem;
+    }
+    
+    /* Method cards */
+    .method-card {
+        margin-bottom: 1rem;
+    }
+    
+    /* Audience cards */
+    .audience-card {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Hide decorative elements on mobile */
+    .luxury-gradient::before,
+    .luxury-gradient::after,
+    .floating-element,
+    .texture-overlay {
+        display: none;
+    }
+    
+    /* Language selector mobile position */
+    .language-selector {
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
+    
+    .language-selector select {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Image optimizations */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Dr. Calandrini image mobile */
+    .float-luxury img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+    
+    /* Timeline mobile */
+    .timeline-item {
+        padding-left: 2rem;
+    }
+    
+    .timeline-dot {
+        left: 0;
+    }
+    
+    /* Footer mobile */
+    footer .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    footer .flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Small Devices (576px - 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    html {
+        font-size: 15px;
+    }
+    
+    h1, .text-7xl {
+        font-size: 3rem !important;
+    }
+    
+    h2, .text-6xl, .text-5xl {
+        font-size: 2.5rem !important;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+    
+    .btn-luxury {
+        padding: 1rem 2.5rem;
+    }
+    
+    /* Pillars 2 columns on small tablets */
+    .pillars-section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Method cards 1 column */
+    .method-section .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Medium Devices (768px - 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* iPad Portrait */
+    .hero-section .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .float-luxury {
+        max-width: 500px;
+        margin: 0 auto 2rem;
+    }
+    
+    /* Pillars 3 columns */
+    .pillars-section .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Method 2 columns */
+    .method-section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Audience 1 column */
+    .audience-section .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Large Devices (992px - 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Desktop adjustments */
+    .container,
+    .max-w-7xl,
+    .max-w-6xl {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    /* Pillars 4 columns */
+    .pillars-section .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Extra Large Devices (≥ 1200px) */
+@media (min-width: 1200px) {
+    /* Full desktop experience */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Ultra Wide Screens (≥ 1920px) */
+@media (min-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .container,
+    .max-w-7xl {
+        max-width: 1400px;
+    }
+    
+    .max-w-6xl {
+        max-width: 1200px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase tap targets */
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Disable hover effects on touch */
+    .card-luxury:hover,
+    .btn-luxury:hover,
+    .audience-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    /* Improve scrolling performance */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide unnecessary elements */
+    .language-selector,
+    .btn-luxury,
+    .luxury-gradient,
+    .texture-overlay,
+    video,
+    iframe {
+        display: none !important;
+    }
+    
+    /* Adjust colors for print */
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .text-luxury {
+        color: black;
+        -webkit-text-fill-color: black;
+    }
+    
+    /* Page breaks */
+    section {
+        page-break-after: always;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    /* Already dark theme by default, but ensure consistency */
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    body {
+        background: #000;
+        color: #fff;
+    }
+    
+    .btn-luxury {
+        border: 2px solid #fff;
+    }
+    
+    .card-luxury {
+        border: 2px solid #fff;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 812px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .hero-section .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .float-luxury {
+        max-height: 300px;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Specific Device Fixes */
+
+/* iPhone X/XS/11 Pro */
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) {
+    /* Safe area adjustments */
+    .hero-section {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* iPad Pro */
+@media only screen 
+    and (min-device-width: 1024px) 
+    and (max-device-width: 1366px) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+    .hero-section .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Samsung Galaxy Fold */
+@media (max-width: 280px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .language-selector {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .btn-luxury {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Utility Classes for Responsive */
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .text-center-mobile {
+        text-align: center;
+    }
+    
+    .w-full-mobile {
+        width: 100%;
+    }
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Tradução Automática - Face & Nose Code</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .status-synced { background: #22c55e; }
+        .status-pending { background: #fbbf24; }
+        .status-error { background: #ef4444; }
+        
+        .translation-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .translation-card:hover {
+            border-left-color: #667eea;
+            transform: translateX(4px);
+        }
+        
+        .editor-container {
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .flag-pt { background: linear-gradient(to bottom, #009639 33%, #fedf00 33%, #fedf00 66%, #002776 66%); }
+        .flag-en { background: linear-gradient(45deg, #012169 25%, transparent 25%), linear-gradient(-45deg, #012169 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #012169 75%), linear-gradient(-45deg, transparent 75%, #012169 75%); background-size: 8px 8px; background-color: #ce1124; }
+        .flag-es { background: linear-gradient(to bottom, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%); }
+        
+        .loading-spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-language text-2xl"></i>
+                    <h1 class="text-2xl font-bold">Sistema de Tradução Automática</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm">
+                        <span class="opacity-75">Idiomas:</span>
+                        <span class="font-semibold">PT → EN + ES</span>
+                    </div>
+                    <button id="settingsBtn" class="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-file-text text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Total de Textos</p>
+                        <p class="text-2xl font-bold" id="totalTexts">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Sincronizados</p>
+                        <p class="text-2xl font-bold text-green-600" id="syncedTexts">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Pendentes</p>
+                        <p class="text-2xl font-bold text-yellow-600" id="pendingTexts">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-red-100 text-red-600">
+                        <i class="fas fa-exclamation-triangle text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-600">Com Erro</p>
+                        <p class="text-2xl font-bold text-red-600" id="errorTexts">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4 mb-8">
+            <button id="addTextBtn" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2">
+                <i class="fas fa-plus"></i>
+                <span>Adicionar Novo Texto</span>
+            </button>
+            
+            <button id="translateAllBtn" class="btn-success text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2">
+                <i class="fas fa-globe"></i>
+                <span>Traduzir Todos Pendentes</span>
+            </button>
+            
+            <button id="exportBtn" class="btn-warning text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2">
+                <i class="fas fa-download"></i>
+                <span>Exportar Traduções</span>
+            </button>
+            
+            <button id="importBtn" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2">
+                <i class="fas fa-upload"></i>
+                <span>Importar Traduções</span>
+            </button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="bg-white rounded-lg p-6 card-shadow mb-8">
+            <div class="flex flex-wrap gap-4 items-center">
+                <div class="flex-1 min-w-64">
+                    <input type="text" id="searchInput" placeholder="Buscar textos..." 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                
+                <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <option value="">Todos os Status</option>
+                    <option value="synced">Sincronizados</option>
+                    <option value="pending">Pendentes</option>
+                    <option value="error">Com Erro</option>
+                </select>
+                
+                <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <option value="">Todas as Categorias</option>
+                    <option value="hero">Hero Section</option>
+                    <option value="form">Formulários</option>
+                    <option value="content">Conteúdo</option>
+                    <option value="meta">Meta Tags</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Translations List -->
+        <div class="bg-white rounded-lg card-shadow">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-xl font-bold text-gray-800">Gerenciar Traduções</h2>
+                <p class="text-gray-600 mt-1">Adicione, edite e gerencie suas traduções automáticas</p>
+            </div>
+            
+            <div id="translationsList" class="divide-y divide-gray-200">
+                <!-- Translations will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Text Modal -->
+    <div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 id="modalTitle" class="text-xl font-bold text-gray-800">Adicionar Novo Texto</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <form id="textForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Chave de Identificação</label>
+                            <input type="text" id="textKey" required 
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                   placeholder="ex: hero.title">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Categoria</label>
+                            <select id="textCategory" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="">Selecione uma categoria</option>
+                                <option value="hero">Hero Section</option>
+                                <option value="form">Formulários</option>
+                                <option value="content">Conteúdo</option>
+                                <option value="meta">Meta Tags</option>
+                                <option value="buttons">Botões</option>
+                                <option value="navigation">Navegação</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <span class="language-flag flag-pt"></span>
+                            Texto Original (Português)
+                        </label>
+                        <textarea id="originalText" required rows="4"
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                  placeholder="Digite o texto em português..."></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span class="language-flag flag-en"></span>
+                                Tradução Inglês
+                                <button type="button" id="translateEnBtn" class="ml-2 text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-magic text-sm"></i> Auto
+                                </button>
+                            </label>
+                            <textarea id="englishText" rows="4"
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                      placeholder="Tradução em inglês..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <span class="language-flag flag-es"></span>
+                                Tradução Espanhol
+                                <button type="button" id="translateEsBtn" class="ml-2 text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-magic text-sm"></i> Auto
+                                </button>
+                            </label>
+                            <textarea id="spanishText" rows="4"
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                      placeholder="Tradução em espanhol..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="autoTranslate" class="mr-2">
+                                <span class="text-sm text-gray-700">Traduzir automaticamente ao salvar</span>
+                            </label>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <button type="button" id="cancelBtn" 
+                                    class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                                Cancelar
+                            </button>
+                            <button type="submit" id="saveBtn" 
+                                    class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-2xl w-full mx-4">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold text-gray-800">Configurações do Sistema</h3>
+                    <button id="closeSettingsModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Configurações de Tradução</h4>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Serviço de Tradução</label>
+                                <select id="translationService" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                    <option value="google">Google Translate</option>
+                                    <option value="deepl">DeepL</option>
+                                    <option value="azure">Azure Translator</option>
+                                    <option value="mock">Mock (Para Testes)</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Chave da API</label>
+                                <input type="password" id="apiKey" 
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                       placeholder="Insira sua chave da API">
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="autoSync" class="mr-2">
+                                <label class="text-sm text-gray-700">Sincronizar automaticamente ao editar texto original</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Backup e Exportação</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-700">Backup automático</span>
+                                <input type="checkbox" id="autoBackup" class="mr-2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Formato de exportação padrão</label>
+                                <select id="exportFormat" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                    <option value="json">JSON</option>
+                                    <option value="csv">CSV</option>
+                                    <option value="xlsx">Excel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end space-x-3 mt-8">
+                    <button id="resetSettings" class="btn-danger text-white px-6 py-2 rounded-lg">
+                        Resetar
+                    </button>
+                    <button id="saveSettings" class="btn-primary text-white px-6 py-2 rounded-lg">
+                        Salvar Configurações
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 text-center">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-700" id="loadingText">Processando...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="fileInput" accept=".json,.csv,.xlsx" class="hidden">
+
+    <!-- Scripts -->
+    <script src="js/translation-system.js"></script>
+    <script src="js/translation-api.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/data-manager.js"></script>
+</body>
+</html>

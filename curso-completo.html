@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="course.hero.title">Face & Nose Code - Masterclass em Procedimentos Combinados</title>
+    <meta name="description" content="Domine as técnicas mais avançadas em cirurgia facial e aumente seu faturamento em até 30%" data-i18n-content="course.hero.description">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/animations.css">
+    <link rel="stylesheet" href="src/assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        /* Override some Tailwind defaults to match luxury theme */
+        * {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        body {
+            background: #03030D;
+            color: #C7C2DF;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(3, 3, 13, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #5E3CEA, #4E33C4);
+            border-radius: 5px;
+        }
+        
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(94, 60, 234, 0.3);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Countdown timer */
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        /* Comparison table */
+        .comparison-table {
+            background: rgba(3, 3, 13, 0.95);
+            border: 1px solid rgba(199, 194, 223, 0.1);
+        }
+        
+        /* FAQ accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(199, 194, 223, 0.1);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        /* Bonus cards */
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(94, 60, 234, 0.1), rgba(78, 51, 196, 0.05));
+            border: 1px solid rgba(94, 60, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonus-card::before {
+            content: 'BÔNUS';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: linear-gradient(135deg, #5E3CEA, #4E33C4);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        
+        /* Guarantee badges */
+        .guarantee-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Pulse animation for CTAs */
+        @keyframes pulse-cta {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(94, 60, 234, 0.5);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 20px 10px rgba(94, 60, 234, 0);
+            }
+        }
+        
+        .pulse-cta {
+            animation: pulse-cta 2s infinite;
+        }
+        
+        /* Number counters */
+        .number-highlight {
+            background: linear-gradient(135deg, #5E3CEA, #4E33C4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="texture-overlay"></div>
+    
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+        <select id="language-selector" class="bg-black/50 text-white px-4 py-2 rounded-lg border border-purple-500/30">
+            <option value="pt-BR">🇧🇷 Português</option>
+            <option value="en-US">🇺🇸 English</option>
+            <option value="es-ES">🇪🇸 Español</option>
+        </select>
+    </div>
+
+    <!-- HERO - Cabeçalho Matador -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+        <div class="luxury-gradient absolute inset-0"></div>
+        
+        <!-- Animated background particles -->
+        <div class="absolute inset-0">
+            <div class="particle-1"></div>
+            <div class="particle-2"></div>
+            <div class="particle-3"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-12 fade-in-up">
+                <h1 class="text-5xl lg:text-7xl mb-6 text-luxury" data-i18n="course.hero.title">
+                    Face & Nose Code
+                </h1>
+                <h2 class="text-2xl lg:text-4xl mb-8 text-white/90">
+                    <span data-i18n="course.hero.subtitle">O Único Protocolo Para Realizar</span><br>
+                    <span class="text-luxury" data-i18n="course.hero.highlight">6 Procedimentos na Face em Uma Sessão</span>
+                </h2>
+                <p class="text-xl mb-12 text-gray-400 max-w-3xl mx-auto" data-i18n="course.hero.description">
+                    <strong>Rinomodelação + Preenchimento de Olheiras + MD Codes + 
+                    Bigode Chinês + Lábios + Mento</strong> - Tudo em 90 minutos!
+                </p>
+            </div>
+            
+            <!-- Video Section -->
+            <div class="video-container mb-12">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Apresentação Face & Nose Code"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="text-center">
+                <a href="#investimento" class="btn-luxury inline-block px-12 py-6 text-white rounded-lg text-xl pulse-cta" data-i18n="course.hero.cta">
+                    QUERO MINHA VAGA AGORA!
+                </a>
+                <p class="text-sm text-gray-500 mt-4 flex items-center justify-center gap-2" data-i18n="course.hero.lastSpots">
+                    <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" fill="url(#glassGradient)"/>
+                    </svg>
+                    Turma Janeiro 2025 - Últimas Vagas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1 - Quem Precisa Disso (Atenção) -->
+    <section class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Você Já Pensou Nessas Questões?
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Essas são as frustrações que escuto diariamente dos médicos:
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Problem cards -->
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Múltiplas Sessões</h3>
+                    <p class="text-gray-400">
+                        "Por que meus pacientes precisam voltar tantas vezes para completar o tratamento?"
+                    </p>
+                </div>
+                
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Preços Baixos</h3>
+                    <p class="text-gray-400">
+                        "Como outros médicos conseguem cobrar mais pelos mesmos procedimentos?"
+                    </p>
+                </div>
+                
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Perda de Pacientes</h3>
+                    <p class="text-gray-400">
+                        "Por que perco pacientes para a concorrência mesmo tendo boa técnica?"
+                    </p>
+                </div>
+                
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Ticket Médio Baixo</h3>
+                    <p class="text-gray-400">
+                        "Como posso aumentar meu ticket médio sem aumentar as horas trabalhadas?"
+                    </p>
+                </div>
+                
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Protocolo Limitado</h3>
+                    <p class="text-gray-400">
+                        "Estou limitado aos protocolos básicos que todos já fazem"
+                    </p>
+                </div>
+                
+                <div class="card-luxury p-8 rounded-lg hover:scale-105 transition-transform duration-500">
+                    <div class="mb-4">
+                        <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="url(#glassGradient)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3 text-white">Agenda Lotada, Lucro Baixo</h3>
+                    <p class="text-gray-400">
+                        "Trabalho muito mas meu lucro não reflete meu esforço"
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-2xl text-luxury">
+                    Agora imagine...<br>
+                    <span class="text-white">Se você pudesse resolver TODOS esses problemas com um único protocolo?</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2 - O Mecanismo (Interesse) -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-900/10 to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    A Solução Face & Nose Code
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    O <strong class="text-white">Face & Nose CODE</strong> é o Primeiro e Único Protocolo que ensina você a realizar 
+                    <strong class="text-purple-400">Rinomodelação + Preenchimento de Olheiras + MD Codes + 
+                    Bigode Chinês + Lábios + Mento</strong> em uma única sessão de 90 minutos.
+                </p>
+            </div>
+            
+            <!-- Method Timeline -->
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-600 to-purple-900"></div>
+                
+                <div class="space-y-20">
+                    <!-- Step 1 -->
+                    <div class="flex items-center justify-between">
+                        <div class="w-5/12 text-right pr-8">
+                            <h3 class="text-2xl text-white mb-3">Método Exclusivo de Marcação</h3>
+                            <p class="text-gray-400">
+                                Sistema de pontos estratégicos que permite realizar 
+                                todos os procedimentos em sequência otimizada
+                            </p>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="w-5/12 pl-8">
+                            <div class="card-luxury p-6 rounded-lg">
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Reduz tempo em 60%
+                                </p>
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Zero retrabalho
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex items-center justify-between">
+                        <div class="w-5/12 text-right pr-8">
+                            <div class="card-luxury p-6 rounded-lg">
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Paciente sai pronto
+                                </p>
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Sem retornos desnecessários
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="w-5/12 pl-8">
+                            <h3 class="text-2xl text-white mb-3">Sequência Otimizada</h3>
+                            <p class="text-gray-400">
+                                Ordem exata dos 6 procedimentos para máximo resultado 
+                                com mínimo trauma e tempo
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex items-center justify-between">
+                        <div class="w-5/12 text-right pr-8">
+                            <h3 class="text-2xl text-white mb-3">Precificação Premium</h3>
+                            <p class="text-gray-400">
+                                Como cobrar R$ 15.000+ por sessão completa 
+                                e ter fila de espera
+                            </p>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="w-5/12 pl-8">
+                            <div class="card-luxury p-6 rounded-lg">
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Ticket 3x maior
+                                </p>
+                                <p class="text-purple-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Posicionamento diferenciado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Stats -->
+            <div class="grid md:grid-cols-3 gap-8 mt-20">
+                <div class="text-center">
+                    <div class="number-highlight">R$ 15K+</div>
+                    <p class="text-xl text-gray-400 mt-2">Por Sessão Completa</p>
+                </div>
+                <div class="text-center">
+                    <div class="number-highlight">90 min</div>
+                    <p class="text-xl text-gray-400 mt-2">Duração Total</p>
+                </div>
+                <div class="text-center">
+                    <div class="number-highlight">1 Sessão</div>
+                    <p class="text-xl text-gray-400 mt-2">Resultado Completo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3 - O Programa (Desejo) -->
+    <section class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    O Que Você Vai Aprender
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Conteúdo completo para você dominar o protocolo Face & Nose CODE
+                </p>
+            </div>
+            
+            <!-- Modules Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Module 1 -->
+                <div class="card-luxury p-8 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-900 rounded-lg flex items-center justify-center text-white font-bold mr-4">
+                            M1
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl text-white mb-2">Base Científica</h3>
+                            <p class="text-gray-400 mb-4">Módulo Online</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Anatomia estratégica da face</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Farmacologia dos bioestimuladores</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Reologia dos preenchedores</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Segurança e prevenção de intercorrências</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="card-luxury p-8 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-900 rounded-lg flex items-center justify-center text-white font-bold mr-4">
+                            M2
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl text-white mb-2">O Protocolo Completo</h3>
+                            <p class="text-gray-400 mb-4">Passo a Passo Detalhado</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Rinomodelação avançada com cânulas</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Técnica exclusiva para olheiras profundas</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>MD Codes completo em 15 minutos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Bigode chinês e lábios perfeitos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="card-luxury p-8 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-900 rounded-lg flex items-center justify-center text-white font-bold mr-4">
+                            M3
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl text-white mb-2">Marketing Médico</h3>
+                            <p class="text-gray-400 mb-4">Como Vender o Protocolo</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Script de venda que converte 70%+</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Como justificar o preço premium</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Material de divulgação pronto</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Estratégia de redes sociais</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="card-luxury p-8 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-900 rounded-lg flex items-center justify-center text-white font-bold mr-4">
+                            M4
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl text-white mb-2">Casos Clínicos</h3>
+                            <p class="text-gray-400 mb-4">Resultados Reais</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>50+ casos documentados</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Antes e depois impressionantes</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Erros comuns e como evitar</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Manejo de complicações</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4 - Bônus Exclusivos -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-900/10 to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Bônus Especiais
+                </h2>
+                <p class="text-xl text-gray-400">
+                    <span class="text-red-400 font-bold">HOJE:</span> Inscrevendo-se agora, você ganha TODOS estes bônus!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Bonus 1 -->
+                <div class="bonus-card p-8 rounded-lg">
+                    <h3 class="text-2xl text-white mb-4">Planilha de Precificação</h3>
+                    <p class="text-gray-400 mb-4">
+                        Ferramenta que calcula automaticamente seu preço ideal
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 line-through">R$ 997</p>
+                            <p class="text-3xl text-green-400">GRÁTIS</p>
+                        </div>
+                        <div>
+                            <svg class="w-12 h-12 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bonus 2 -->
+                <div class="bonus-card p-8 rounded-lg">
+                    <h3 class="text-2xl text-white mb-4">Grupo VIP WhatsApp</h3>
+                    <p class="text-gray-400 mb-4">
+                        Tire dúvidas direto comigo por 6 meses após o curso
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 line-through">R$ 2.997</p>
+                            <p class="text-3xl text-green-400">GRÁTIS</p>
+                        </div>
+                        <div>
+                            <svg class="w-12 h-12 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bonus 3 -->
+                <div class="bonus-card p-8 rounded-lg">
+                    <h3 class="text-2xl text-white mb-4">Material de Marketing</h3>
+                    <p class="text-gray-400 mb-4">
+                        Posts, stories e vídeos prontos para divulgar seu novo serviço
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-500 line-through">R$ 1.497</p>
+                            <p class="text-3xl text-green-400">GRÁTIS</p>
+                        </div>
+                        <div>
+                            <svg class="w-12 h-12 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="inline-block countdown-box px-8 py-4 rounded-lg">
+                    <p class="text-red-400 font-bold mb-2 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        VALOR TOTAL DOS BÔNUS: R$ 5.491
+                    </p>
+                    <p class="text-2xl text-white">Você leva TUDO <span class="text-4xl font-bold text-green-400">GRÁTIS</span> hoje!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5 - Investimento -->
+    <section id="investimento" class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Investimento
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Escolha a melhor forma de pagamento para você
+                </p>
+            </div>
+            
+            <div class="card-luxury p-12 rounded-lg text-center">
+                <div class="mb-8">
+                    <p class="text-gray-400 mb-2">De <span class="line-through">R$ 14.997</span></p>
+                    <p class="text-gray-400 mb-4">Por apenas</p>
+                    <div class="text-6xl font-bold text-white mb-2">12x R$ 997</div>
+                    <p class="text-xl text-gray-400">ou à vista</p>
+                    <div class="text-4xl font-bold text-luxury">R$ 9.970</div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-black/30 p-4 rounded-lg">
+                        <p class="text-purple-400 font-bold">PIX À VISTA</p>
+                        <p class="text-white text-2xl">R$ 9.970</p>
+                        <p class="text-green-400">Economize R$ 1.994</p>
+                    </div>
+                    <div class="bg-black/30 p-4 rounded-lg">
+                        <p class="text-purple-400 font-bold">BOLETO</p>
+                        <p class="text-white text-2xl">R$ 10.467</p>
+                        <p class="text-green-400">5% de desconto</p>
+                    </div>
+                    <div class="bg-black/30 p-4 rounded-lg">
+                        <p class="text-purple-400 font-bold">CARTÃO</p>
+                        <p class="text-white text-2xl">12x R$ 997</p>
+                        <p class="text-gray-400">Sem juros</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn-luxury inline-block px-12 py-6 text-white rounded-lg text-xl mb-4 pulse-cta">
+                    QUERO GARANTIR MINHA VAGA AGORA!
+                </a>
+                
+                <div class="flex justify-center items-center space-x-4 text-gray-400">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Pagamento 100% Seguro
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Garantia de 7 dias
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6 - Garantia Tripla Blindada -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-green-900/10 to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Garantia Tripla Blindada
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Seu investimento está 100% protegido
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Garantia 1 -->
+                <div class="guarantee-badge p-8 rounded-lg text-center">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 mx-auto text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl text-white mb-4">Garantia de 7 Dias</h3>
+                    <p class="text-gray-400">
+                        Assista as primeiras aulas e se não gostar, devolvemos 100% do seu dinheiro
+                    </p>
+                </div>
+                
+                <!-- Garantia 2 -->
+                <div class="guarantee-badge p-8 rounded-lg text-center">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 mx-auto text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl text-white mb-4">Garantia de Resultados</h3>
+                    <p class="text-gray-400">
+                        Aplique o protocolo e se não triplicar seu ticket médio, devolvemos seu investimento
+                    </p>
+                </div>
+                
+                <!-- Garantia 3 -->
+                <div class="guarantee-badge p-8 rounded-lg text-center">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 mx-auto text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl text-white mb-4">Atualizações Grátis</h3>
+                    <p class="text-gray-400">
+                        Sempre que eu atualizar o protocolo, você recebe as novidades sem pagar nada a mais
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7 - Urgência Real -->
+    <section class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-red-400">
+                    <span class="flex items-center justify-center gap-3">
+                        <svg class="w-12 h-12 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        ATENÇÃO: Vagas Limitadas!
+                    </span>
+                </h2>
+            </div>
+            
+            <div class="countdown-box p-12 rounded-lg text-center">
+                <p class="text-2xl text-white mb-8">
+                    Turma de Janeiro/2025 com <span class="text-red-400 font-bold">87% das vagas preenchidas</span>
+                </p>
+                
+                <div class="grid grid-cols-4 gap-4 mb-8 max-w-2xl mx-auto">
+                    <div>
+                        <div class="text-4xl font-bold text-white" id="days">02</div>
+                        <p class="text-gray-400">Dias</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white" id="hours">14</div>
+                        <p class="text-gray-400">Horas</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white" id="minutes">37</div>
+                        <p class="text-gray-400">Minutos</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white" id="seconds">42</div>
+                        <p class="text-gray-400">Segundos</p>
+                    </div>
+                </div>
+                
+                <div class="bg-black/50 p-6 rounded-lg">
+                    <p class="text-xl text-white mb-4">Status das Vagas:</p>
+                    <div class="w-full bg-gray-700 rounded-full h-8 mb-4">
+                        <div class="bg-gradient-to-r from-red-600 to-red-400 h-8 rounded-full" style="width: 87%"></div>
+                    </div>
+                    <p class="text-gray-400">
+                        <span class="text-2xl font-bold text-white">3</span> de 25 vagas restantes
+                    </p>
+                </div>
+                
+                <p class="text-yellow-400 mt-8 text-lg flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                    7 médicos estão vendo esta página agora
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 8 - Comparação COM vs SEM -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-900/10 to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Sua Vida Profissional
+                </h2>
+                <p class="text-xl text-gray-400">
+                    A diferença que o Face & Nose Code fará na sua carreira
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- SEM o curso -->
+                <div class="comparison-table p-8 rounded-lg border-2 border-red-500/30">
+                    <h3 class="text-3xl text-red-400 mb-8 text-center">SEM o Face & Nose Code</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Continuar fazendo 1 procedimento por vez</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Paciente voltar várias vezes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Cobrar preços baixos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Perder pacientes para concorrência</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Trabalhar muito e ganhar pouco</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Ser apenas mais um no mercado</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-red-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-400">Frustrado com resultados medíocres</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- COM o curso -->
+                <div class="comparison-table p-8 rounded-lg border-2 border-green-500/30">
+                    <h3 class="text-3xl text-green-400 mb-8 text-center">COM o Face & Nose Code</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">6 procedimentos em 90 minutos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Paciente sai 100% satisfeito</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Cobrar R$ 15.000+ por sessão</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Fila de espera de pacientes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Triplicar seu ticket médio</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Ser o único na sua cidade</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">Realizado profissionalmente</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 9 - O que acontece após a compra -->
+    <section class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Próximos Passos
+                </h2>
+                <p class="text-xl text-gray-400">
+                    O que acontece assim que você se inscrever
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-6 flex-shrink-0">
+                        1
+                    </div>
+                    <div class="flex-1 card-luxury p-6 rounded-lg">
+                        <h3 class="text-xl text-white mb-2">Confirmação Imediata</h3>
+                        <p class="text-gray-400">
+                            Você receberá um e-mail com todos os detalhes da sua inscrição e acesso ao grupo VIP no WhatsApp
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-6 flex-shrink-0">
+                        2
+                    </div>
+                    <div class="flex-1 card-luxury p-6 rounded-lg">
+                        <h3 class="text-xl text-white mb-2">Material Preparatório</h3>
+                        <p class="text-gray-400">
+                            Em 24h você recebe o material de estudo prévio para aproveitar ao máximo o curso presencial
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-6 flex-shrink-0">
+                        3
+                    </div>
+                    <div class="flex-1 card-luxury p-6 rounded-lg">
+                        <h3 class="text-xl text-white mb-2">Curso Presencial</h3>
+                        <p class="text-gray-400">
+                            Dias 7 e 8 de março em São Paulo - 16 horas de imersão total com coffee breaks e almoço inclusos
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-6 flex-shrink-0">
+                        4
+                    </div>
+                    <div class="flex-1 card-luxury p-6 rounded-lg">
+                        <h3 class="text-xl text-white mb-2">Mentoria Continuada</h3>
+                        <p class="text-gray-400">
+                            3 meses de acompanhamento semanal dos seus casos com feedback direto do Dr. Calandrini
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 10 - Para quem é / não é -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-900/10 to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Este Curso é Para Você?
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Para quem É -->
+                <div class="card-luxury p-8 rounded-lg border-2 border-green-500/30">
+                    <h3 class="text-3xl text-green-400 mb-8 text-center">✅ É PARA VOCÊ SE...</h3>
+                    <ul class="space-y-4">
+                        <li class="text-gray-300">• É médico com CRM ativo</li>
+                        <li class="text-gray-300">• Tem especialização em Cirurgia Plástica, Otorrino ou áreas afins</li>
+                        <li class="text-gray-300">• Busca se diferenciar no mercado</li>
+                        <li class="text-gray-300">• Quer aumentar seu faturamento</li>
+                        <li class="text-gray-300">• Tem compromisso com a excelência</li>
+                        <li class="text-gray-300">• Está disposto a investir na sua carreira</li>
+                        <li class="text-gray-300">• Quer aprender com um dos melhores do Brasil</li>
+                    </ul>
+                </div>
+                
+                <!-- Para quem NÃO é -->
+                <div class="card-luxury p-8 rounded-lg border-2 border-red-500/30">
+                    <h3 class="text-3xl text-red-400 mb-8 text-center">❌ NÃO É PARA VOCÊ SE...</h3>
+                    <ul class="space-y-4">
+                        <li class="text-gray-400">• Não é médico ou não tem CRM</li>
+                        <li class="text-gray-400">• Busca um curso 100% online</li>
+                        <li class="text-gray-400">• Não tem experiência prévia em cirurgia</li>
+                        <li class="text-gray-400">• Procura soluções mágicas sem esforço</li>
+                        <li class="text-gray-400">• Não pode comparecer aos 2 dias presenciais</li>
+                        <li class="text-gray-400">• Não está disposto a implementar o que aprender</li>
+                        <li class="text-gray-400">• Acha que já sabe tudo sobre cirurgia facial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 11 - Perguntas Frequentes -->
+    <section class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    Perguntas Frequentes
+                </h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">O curso oferece certificado?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        Sim! Você receberá um certificado oficial de 16 horas reconhecido nacionalmente, 
+                        válido para progressão de carreira e comprovação de educação continuada.
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">Preciso levar algum material?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        Não! Todo material necessário será fornecido, incluindo instrumentais para a prática, 
+                        apostilas e acesso digital aos conteúdos. Você só precisa trazer sua vontade de aprender.
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">Onde será realizado o curso?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        O curso será realizado em São Paulo capital, em local de fácil acesso com estacionamento 
+                        gratuito. O endereço exato será enviado aos inscritos com 15 dias de antecedência.
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">Posso parcelar o pagamento?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        Sim! Você pode parcelar em até 12x sem juros no cartão de crédito. 
+                        Também oferecemos desconto especial para pagamento à vista via PIX ou boleto.
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">E se eu não puder comparecer?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        Se você avisar com 30 dias de antecedência, pode transferir sua vaga para a próxima turma 
+                        sem custo adicional. Em caso de emergência médica comprovada, faremos o reembolso integral.
+                    </div>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="faq-item card-luxury p-6 rounded-lg">
+                    <div class="faq-question cursor-pointer flex justify-between items-center">
+                        <h3 class="text-xl text-white">Qual o diferencial deste curso?</h3>
+                        <span class="text-purple-400">+</span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        O Face & Nose Code é o único curso no Brasil que ensina a técnica de procedimentos combinados 
+                        com foco em otimização de tempo e resultados. Além disso, você terá mentoria continuada por 3 meses.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 12 - Decisão Final -->
+    <section class="py-20 px-4 relative bg-gradient-to-b from-transparent via-purple-900/20 to-transparent">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl lg:text-6xl mb-6 text-luxury">
+                    A Decisão é Sua
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Você pode continuar fazendo o que sempre fez e ter os mesmos resultados... 
+                    ou pode dar o próximo passo na sua carreira
+                </p>
+            </div>
+            
+            <div class="card-luxury p-12 rounded-lg text-center">
+                <h3 class="text-3xl text-white mb-6">
+                    Imagine daqui a 90 dias...
+                </h3>
+                <p class="text-xl text-gray-300 mb-8">
+                    Você sendo reconhecido como referência em procedimentos combinados.<br>
+                    Pacientes procurando você especificamente.<br>
+                    Seu faturamento 30% maior.<br>
+                    Confiança total em casos complexos.
+                </p>
+                
+                <div class="bg-black/50 p-8 rounded-lg mb-8">
+                    <p class="text-2xl text-luxury mb-4">
+                        Tudo isso por menos do que você ganha em uma única cirurgia
+                    </p>
+                    <p class="text-gray-400">
+                        E com a possibilidade de multiplicar esse valor várias vezes
+                    </p>
+                </div>
+                
+                <a href="#investimento" class="btn-luxury inline-block px-12 py-6 text-white rounded-lg text-2xl mb-6 pulse-cta">
+                    SIM! QUERO TRANSFORMAR MINHA CARREIRA
+                </a>
+                
+                <p class="text-gray-400 mb-4">
+                    🔒 Pagamento 100% Seguro | 🛡️ Garantia de 7 dias | ⚡ Vagas Limitadas
+                </p>
+                
+                <div class="countdown-box p-6 rounded-lg inline-block">
+                    <p class="text-red-400 font-bold">
+                        ⚠️ Esta página será removida em breve. Não perca esta oportunidade!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 pt-8 border-t border-gray-800">
+                <p class="text-luxury text-lg mb-4">
+                    Face & Nose Code
+                </p>
+                <p class="text-xs opacity-40 mb-6">
+                    © Dr. Alexandre Calandrini • Todos os direitos reservados
+                </p>
+                <div class="flex justify-center gap-12 text-xs tracking-wider mb-6">
+                    <a href="termos.html" class="opacity-40 hover:opacity-80 transition">TERMOS</a>
+                    <a href="privacidade.html" class="opacity-40 hover:opacity-80 transition">PRIVACIDADE</a>
+                </div>
+                <p class="text-xs opacity-40">
+                    Suporte: support@callandriniacademy.com
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+    <script src="src/assets/js/i18n.js"></script>
+    <script src="src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize i18n
+        document.addEventListener("DOMContentLoaded", function () {
+            // Small delay to ensure all scripts are loaded
+            setTimeout(function () {
+                if (window.i18n && window.i18n.applyTranslations) {
+                    window.i18n.applyTranslations();
+                }
+            }, 100);
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+                
+                answer.classList.toggle('active');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 2);
+            endDate.setHours(endDate.getHours() + 14);
+            
+            const now = new Date();
+            const diff = endDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

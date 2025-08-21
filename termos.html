@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Face & Nose Code</title>
+    <meta name="description" content="Termos de uso e condições do curso Face & Nose Code">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/animations.css">
+    <link rel="stylesheet" href="src/assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        body {
+            background: #03030D;
+            color: #C7C2DF;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(3, 3, 13, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #5E3CEA, #4E33C4);
+            border-radius: 5px;
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(3, 3, 13, 0.95) 0%, rgba(30, 20, 60, 0.95) 100%);
+            border: 1px solid rgba(199, 194, 223, 0.1);
+            backdrop-filter: blur(20px);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(94, 60, 234, 0.3), rgba(199, 194, 223, 0.2), rgba(94, 60, 234, 0.3), transparent);
+            margin: 2rem 0;
+        }
+        
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .warning-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="texture-overlay"></div>
+    
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+        <select id="language-selector" class="bg-black/50 text-white px-4 py-2 rounded-lg border border-purple-500/30">
+            <option value="pt-BR">🇧🇷 Português</option>
+            <option value="en-US">🇺🇸 English</option>
+            <option value="es-ES">🇪🇸 Español</option>
+        </select>
+    </div>
+
+    <!-- Header -->
+    <div class="relative overflow-hidden">
+        <div class="luxury-gradient absolute inset-0"></div>
+        <div class="relative z-10 py-20 text-center">
+            <h1 class="text-5xl lg:text-7xl mb-4 text-luxury" data-i18n="terms.title">
+                Termos de Uso
+            </h1>
+            <p class="text-xl text-gray-400" data-i18n="terms.subtitle">
+                Condições gerais de uso e contratação
+            </p>
+        </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="max-w-5xl mx-auto px-4 py-12">
+        <div class="glass-card rounded-2xl p-8 lg:p-12">
+            
+            <!-- Important Notice -->
+            <div class="highlight-card p-6 rounded-lg mb-8">
+                <div class="flex items-start gap-4">
+                    <svg class="w-8 h-8 text-yellow-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-xl text-white mb-2" data-i18n="terms.notice.title">Aviso Importante</h3>
+                        <p class="text-gray-400" data-i18n="terms.notice.text">
+                            Ao se inscrever no curso Face & Nose Code, você concorda com todos os termos e condições 
+                            descritos neste documento. Leia atentamente antes de prosseguir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section1.title">
+                    1. Aceitação dos Termos
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="terms.section1.text">
+                    Ao acessar e usar este site, você aceita e concorda em cumprir os termos e disposições deste acordo. 
+                    Se você não concordar com alguma parte destes termos de uso, não deve usar nosso site ou serviços.
+                </p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 2 -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section2.title">
+                    2. Descrição do Serviço
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="terms.section2.text">
+                    O Face & Nose Code é um curso presencial de capacitação profissional para médicos, que ensina:
+                </p>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Protocolo exclusivo de 6 procedimentos faciais em sessão única</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Técnicas avançadas de harmonização facial</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Estratégias de marketing e precificação premium</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Acesso a materiais exclusivos e suporte continuado</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 3 - Eligibility -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section3.title">
+                    3. Elegibilidade
+                </h2>
+                <p class="text-gray-400 mb-4" data-i18n="terms.section3.text">
+                    Para participar do curso, você deve:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Ser médico com CRM ativo</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Ter mais de 18 anos</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Ter especialização na área</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Aceitar os termos</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 4 - Payment -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section4.title">
+                    4. Pagamento e Reembolso
+                </h2>
+                
+                <h3 class="text-xl text-white mb-3 mt-6">4.1 Formas de Pagamento</h3>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span>Cartão de crédito em até 12x sem juros</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span>PIX com desconto especial</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 mt-1">•</span>
+                        <span>Boleto bancário</span>
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl text-white mb-3 mt-6">4.2 Política de Reembolso</h3>
+                <div class="warning-card p-4 rounded-lg">
+                    <p class="text-gray-300">
+                        <strong class="text-white">Garantia de 7 dias:</strong> Você pode solicitar reembolso total 
+                        em até 7 dias após o início do curso, sem necessidade de justificativa.
+                    </p>
+                </div>
+                
+                <h3 class="text-xl text-white mb-3 mt-6">4.3 Cancelamento</h3>
+                <p class="text-gray-400">
+                    Em caso de cancelamento por parte do organizador, o valor integral será devolvido. 
+                    Cancelamentos por parte do aluno seguem a política de reembolso acima.
+                </p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 5 - Intellectual Property -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section5.title">
+                    5. Propriedade Intelectual
+                </h2>
+                <p class="text-gray-400 mb-4">
+                    Todo o conteúdo do curso, incluindo mas não limitado a:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Metodologia e protocolos</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                        </svg>
+                        <span class="text-gray-400">Material didático</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                        </svg>
+                        <span class="text-gray-400">Vídeos e gravações</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-400">Templates e códigos</span>
+                    </div>
+                </div>
+                <div class="warning-card p-4 rounded-lg">
+                    <p class="text-gray-300">
+                        <strong class="text-red-400">Proibido:</strong> É expressamente proibido copiar, distribuir, 
+                        vender ou compartilhar qualquer material do curso sem autorização prévia por escrito.
+                    </p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 6 - Responsibilities -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section6.title">
+                    6. Responsabilidades
+                </h2>
+                
+                <h3 class="text-xl text-white mb-3">6.1 Suas Responsabilidades</h3>
+                <ul class="space-y-2 text-gray-400 ml-6 mb-6">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Fornecer informações verdadeiras e atualizadas</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Manter a confidencialidade do conteúdo</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Comparecer aos dias de curso</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-purple-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Respeitar os direitos de propriedade intelectual</span>
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl text-white mb-3">6.2 Nossas Responsabilidades</h3>
+                <ul class="space-y-2 text-gray-400 ml-6">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Fornecer o conteúdo conforme descrito</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Garantir a qualidade do ensino</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Emitir certificado de conclusão</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-green-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Oferecer suporte durante o período acordado</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 7 - Limitation of Liability -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section7.title">
+                    7. Limitação de Responsabilidade
+                </h2>
+                <div class="warning-card p-4 rounded-lg">
+                    <p class="text-gray-300 mb-3">
+                        O curso Face & Nose Code oferece conhecimento e técnicas educacionais. 
+                        A aplicação prática é de responsabilidade exclusiva do profissional.
+                    </p>
+                    <p class="text-gray-300">
+                        <strong class="text-white">Não nos responsabilizamos por:</strong>
+                    </p>
+                    <ul class="mt-2 ml-4 space-y-1 text-gray-400">
+                        <li>• Resultados obtidos na prática profissional</li>
+                        <li>• Decisões tomadas com base no conteúdo</li>
+                        <li>• Danos diretos ou indiretos decorrentes do uso das técnicas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 8 - Modifications -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section8.title">
+                    8. Alterações dos Termos
+                </h2>
+                <p class="text-gray-400">
+                    Reservamo-nos o direito de modificar estes termos a qualquer momento. 
+                    As alterações entram em vigor imediatamente após a publicação no site. 
+                    É sua responsabilidade revisar periodicamente os termos atualizados.
+                </p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 9 - Jurisdiction -->
+            <section class="mb-8">
+                <h2 class="text-3xl text-white mb-4 pb-2 border-b border-purple-500/30" data-i18n="terms.section9.title">
+                    9. Lei Aplicável e Jurisdição
+                </h2>
+                <p class="text-gray-400">
+                    Estes termos são regidos pelas leis brasileiras. 
+                    Qualquer disputa será resolvida no foro da comarca de São Paulo, SP, 
+                    com exclusão de qualquer outro, por mais privilegiado que seja.
+                </p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Contact -->
+            <section class="mb-8">
+                <div class="glass-card p-6 rounded-lg">
+                    <h2 class="text-2xl text-white mb-4" data-i18n="terms.contact.title">
+                        10. Contato
+                    </h2>
+                    <p class="text-gray-400 mb-4" data-i18n="terms.contact.text">
+                        Para questões sobre estes termos, entre em contato:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-400">contato@facennosecode.com.br</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-gray-400">(11) 99999-9999</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <div class="text-center mt-12">
+                <a href="index.html" class="btn-luxury inline-flex items-center gap-2 px-8 py-4 text-white rounded-lg">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 000-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    <span data-i18n="terms.backButton">Voltar ao Início</span>
+                </a>
+                
+                <div class="mt-12 pt-8 border-t border-gray-800">
+                    <p class="text-luxury text-lg mb-4">
+                        Face & Nose Code
+                    </p>
+                    <p class="text-xs opacity-40 mb-6">
+                        © Dr. Alexandre Calandrini • Todos os direitos reservados
+                    </p>
+                    <div class="flex justify-center gap-12 text-xs tracking-wider mb-6">
+                        <a href="termos.html" class="opacity-40 hover:opacity-80 transition">TERMOS</a>
+                        <a href="privacidade.html" class="opacity-40 hover:opacity-80 transition">PRIVACIDADE</a>
+                    </div>
+                    <p class="text-xs opacity-40">
+                        Suporte: support@callandriniacademy.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+    <script src="src/assets/js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        document.addEventListener("DOMContentLoaded", function () {
+            // Small delay to ensure all scripts are loaded
+            setTimeout(function () {
+                if (window.i18n && window.i18n.applyTranslations) {
+                    window.i18n.applyTranslations();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

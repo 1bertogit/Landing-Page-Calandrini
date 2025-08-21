@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Face & Nose Code - Confirmação</title>
+    <meta name="description" content="Parabéns pela decisão! Bem-vindo ao Face & Nose Code">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/animations.css">
+    <link rel="stylesheet" href="src/assets/css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        body {
+            background: #03030D;
+            color: #C7C2DF;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(94, 60, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(78, 51, 196, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(199, 194, 223, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            animation: bgGradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes bgGradientShift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 20px) scale(1.1); }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(3, 3, 13, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #5E3CEA, #4E33C4);
+            border-radius: 5px;
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(3, 3, 13, 0.95) 0%, rgba(30, 20, 60, 0.95) 100%);
+            border: 1px solid rgba(199, 194, 223, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 2rem;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 0 60px rgba(94, 60, 234, 0.05);
+            animation: slideInUp 0.8s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .confirmation-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #5E3CEA, #4E33C4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+            box-shadow: 0 10px 30px rgba(94, 60, 234, 0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .confirmation-title {
+            text-align: center;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #C7C2DF 0%, #5E3CEA 50%, #C7C2DF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer-luxury 5s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+        
+        @keyframes shimmer-luxury {
+            to { background-position: 200% center; }
+        }
+        
+        .confirmation-subtitle {
+            text-align: center;
+            color: #C7C2DF;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        
+        .message-section {
+            margin: 2rem 0;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(94, 60, 234, 0.3), rgba(199, 194, 223, 0.2), rgba(94, 60, 234, 0.3), transparent);
+            margin: 2rem 0;
+        }
+        
+        .message-text {
+            color: #C7C2DF;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(94, 60, 234, 0.1), rgba(78, 51, 196, 0.05));
+            border: 1px solid rgba(94, 60, 234, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .highlight-title {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .signature {
+            font-style: italic;
+            color: #5E3CEA;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .whatsapp-cta:hover::before {
+            left: 100%;
+        }
+        
+        .whatsapp-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: #777076;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info a {
+            color: #5E3CEA;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #C7C2DF;
+        }
+        
+        /* Floating animation */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+        <select id="language-selector" class="bg-black/50 text-white px-4 py-2 rounded-lg border border-purple-500/30">
+            <option value="pt-BR">🇧🇷 Português</option>
+            <option value="en-US">🇺🇸 English</option>
+            <option value="es-ES">🇪🇸 Español</option>
+        </select>
+    </div>
+
+    <div class="glass-card float-animation">
+        <div class="text-center">
+            <div class="confirmation-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="white">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            
+            <h1 class="confirmation-title" data-i18n="confirmation.welcomeTitle">
+                Parabéns pela decisão, Dr(a.)!
+            </h1>
+            
+            <p class="confirmation-subtitle" data-i18n="confirmation.welcomeSubtitle">
+                Seja bem-vindo(a) ao Face & Nose CODE - o método que vai transformar sua prática cirúrgica com o Pan Rejuvenescimento Facial e Nasal.
+            </p>
+        </div>
+        
+        <div class="section-divider"></div>
+        
+        <div class="message-section">
+            <p class="message-text" data-i18n="confirmation.decisionMessage">
+                Você escolheu dar um passo decisivo para dominar uma abordagem avançada, estruturada e replicável em procedimentos combinados faciais e nasais.
+            </p>
+            
+            <p class="message-text" data-i18n="confirmation.exclusiveGroup">
+                Agora, você faz parte de um grupo seleto de Cirurgiões Plásticos e Otorrinolaringologistas comprometidos com resultados naturais, seguros e duradouros.
+            </p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3 class="highlight-title" data-i18n="confirmation.groupTitle">
+                Junte-se ao nosso grupo exclusivo de alunos
+            </h3>
+            <p class="text-gray-300" data-i18n="confirmation.groupDescription">
+                onde você receberá todas as orientações necessárias, acompanhará as atualizações do treinamento e terá suporte direto para garantir que você alcance excelência com a técnica Pan Rejuvenescimento.
+            </p>
+            
+            <div class="mt-6">
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 text-green-400 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white font-medium">Orientações Necessárias</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 text-purple-400 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
+                            <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white font-medium">Atualizações do Treinamento</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 text-blue-400 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-1.56-1.56C4.938 7.593 4.73 8.277 4.73 9.001c0 .993.241 1.929.668 2.754l1.525-1.525zM10 4.5a5.979 5.979 0 012.516.552L11.562 6.11a4.006 4.006 0 00-3.124 0L7.484 5.052A5.979 5.979 0 0110 4.5z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-white font-medium">Suporte Direto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="message-text text-center" data-i18n="confirmation.excitement">
+            Estamos muito animados em tê-lo(a) conosco nessa jornada.
+        </p>
+        
+        <div class="signature" data-i18n="confirmation.signature">
+            Dr. Alexandre Calandrini
+        </div>
+        
+        <div class="text-center">
+            <a href="https://wa.me/5511999999999?text=Olá! Sou novo aluno do Face %26 Nose Code e gostaria de entrar no grupo exclusivo" 
+               class="whatsapp-cta" 
+               target="_blank"
+               data-i18n="confirmation.joinGroupCta">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                ENTRAR NO GRUPO
+            </a>
+        </div>
+        
+        <div class="contact-info" data-i18n="confirmation.supportContact">
+            Para suporte adicional: <a href="mailto:support@calandriniacademy.com">support@calandriniacademy.com</a>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+            <p class="text-luxury text-lg mb-4">
+                Face & Nose Code
+            </p>
+            <p class="text-xs opacity-40 mb-6">
+                © Dr. Alexandre Calandrini • Todos os direitos reservados
+            </p>
+            <div class="flex justify-center gap-12 text-xs tracking-wider mb-6">
+                <a href="termos.html" class="opacity-40 hover:opacity-80 transition">TERMOS</a>
+                <a href="privacidade.html" class="opacity-40 hover:opacity-80 transition">PRIVACIDADE</a>
+            </div>
+            <p class="text-xs opacity-40">
+                Suporte: support@callandriniacademy.com
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+    <script src="src/assets/js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        document.addEventListener('DOMContentLoaded', function() {
+            // Small delay to ensure all scripts are loaded
+            setTimeout(function () {
+                if (window.i18n && window.i18n.applyTranslations) {
+                    window.i18n.applyTranslations();
+                }
+            }, 100);
+            
+            // Check if user came from successful payment
+            const urlParams = new URLSearchParams(window.location.search);
+            const success = urlParams.get('success');
+            const userName = urlParams.get('name');
+            
+            // Personalize message if data available
+            if (userName) {
+                const title = document.querySelector('.confirmation-title');
+                const currentText = title.textContent;
+                title.textContent = currentText.replace('Dr(a.)', `Dr(a.) ${userName}`);
+            }
+            
+            // Track successful conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    'transaction_id': 'FNC2025-' + Date.now(),
+                    'value': 9970.00,
+                    'currency': 'BRL',
+                    'items': [{
+                        'item_id': 'face-nose-code',
+                        'item_name': 'Face & Nose Code Course',
+                        'category': 'Medical Training',
+                        'quantity': 1,
+                        'price': 9970.00
+                    }]
+                });
+            }
+            
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    content_name: 'Face Nose Code Course',
+                    content_ids: ['face-nose-code'],
+                    content_type: 'product',
+                    value: 9970.00,
+                    currency: 'BRL'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
