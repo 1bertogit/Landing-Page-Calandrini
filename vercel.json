@@ -1,0 +1,54 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.facenosecodde.com.br"
+        }
+      ],
+      "destination": "https://facenosecodde.com.br/$1",
+      "permanent": true
+    }
+  ],
+  "functions": {
+    "src/assets/js/*.js": {
+      "maxDuration": 10
+    }
+  },
+  "buildCommand": "echo 'No build step required for static site'",
+  "outputDirectory": ".",
+  "installCommand": "echo 'No install step required'"
+}
