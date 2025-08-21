@@ -447,17 +447,16 @@
             this.form.reset();
             
             // Mostrar mensagem de sucesso
-            this.showNotification('Inscrição realizada com sucesso! Em breve entraremos em contato.', 'success');
+            this.showNotification('Inscrição realizada com sucesso! Redirecionando...', 'success');
             
             // Tracking de conversão
             this.trackConversion();
             
-            // Redirecionar para página de obrigado (opcional)
+            // Redirecionar para página de obrigado
             setTimeout(() => {
-                if (response.redirect_url) {
-                    window.location.href = response.redirect_url;
-                }
-            }, 2000);
+                const redirectUrl = response.redirect_url || '/obrigado.html';
+                window.location.href = redirectUrl;
+            }, 1500);
         }
 
         handleError(errorType) {
