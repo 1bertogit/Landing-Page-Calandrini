@@ -33,7 +33,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNCODE2025"></script>
@@ -77,8 +77,30 @@
     />
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="src/assets/css/main.css" />
-    <link rel="stylesheet" href="src/assets/css/animations.css" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    
+    <!-- Additional Inline Styles for Enhanced Components -->
+    <style>
+        /* Enhanced Method Card Styles */
+        .method-card {
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .method-card .card-luxury {
+            transition: all 0.3s ease;
+        }
+        
+        .method-card:hover .card-luxury {
+            background: linear-gradient(135deg, rgba(94, 60, 234, 0.05), transparent);
+            border-color: rgba(94, 60, 234, 0.3);
+        }
+    </style>
 
 
   </head>
@@ -104,7 +126,7 @@
           <div class="relative float-luxury">
             <div class="relative">
               <img
-                src="src/assets/images/dr-calandrini.webp"
+                src="/images/dr-calandrini.webp"
                 alt="Dr. Alexandre Calandrini"
                 class="w-full rounded-lg object-cover object-top"
                 style="
@@ -124,7 +146,6 @@
               <div class="badge-luxury" data-i18n="hero.expertBadge">
                 30 Anos de Experiência • 14.000 Cirurgias
               </div>
-            </div>
             </div>
           </div>
 
@@ -419,7 +440,6 @@
                   class="w-2 h-2 bg-[#5E3CEA] rounded-full animate-pulse"
                 ></div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -810,6 +830,8 @@
         </div>
 
         <!-- Statistics Section -->
+        </div>
+        </div>
       </div>
     </section>
 
@@ -846,7 +868,7 @@
             <div class="mentor-image-container mb-12">
               <div class="mentor-image-frame"></div>
               <img
-                src="src/assets/images/Dr-Calandrini-2.jpg"
+                src="/images/Dr-Calandrini-2.jpg"
                 alt="Dr. Alexandre Calandrini"
                 class="mentor-image"
               />
@@ -1380,65 +1402,33 @@
       style="border-color: rgba(199, 194, 223, 0.1)"
     >
       <div class="max-w-6xl mx-auto text-center">
-        <p class="text-luxury text-lg mb-4">
+        <p class="text-luxury text-lg mb-4" data-i18n="footer.brand">
           Face & Nose Code
         </p>
-        <p class="text-xs opacity-40 mb-8">
-          © Dr. Alexandre Calandrini • Todos os direitos reservados
+        <p class="text-xs opacity-40 mb-8" data-i18n="footer.company">
+          Neo Doctor LTDA • CNPJ: 60.005.706/0001-78
         </p>
         <div class="flex justify-center gap-12 text-xs tracking-wider">
           <a
-            href="termos.html"
+            href="#"
             class="opacity-40 hover:opacity-80 transition"
+            data-i18n="footer.links.terms"
             >TERMOS</a
           >
           <a
-            href="privacidade.html"
+            href="#"
             class="opacity-40 hover:opacity-80 transition"
+            data-i18n="footer.links.privacy"
             >PRIVACIDADE</a
           >
         </div>
-        <p class="mt-8 text-xs opacity-40">
-          Suporte: support@callandriniacademy.com
+        <p class="mt-12 text-xs opacity-20" data-i18n="footer.copyright">
+          © Dr Alexandre Calandrini - 2025 • Todos os direitos reservados
         </p>
       </div>
     </footer>
 
-    <!-- Backend Configuration -->
-    <script src="src/assets/js/backend-config.js"></script>
-    
-    <!-- Analytics & Tracking -->
-    <script src="src/assets/js/analytics.js"></script>
-    
-    <!-- i18n Translation Files -->
-    <script src="src/i18n/pt-BR.js"></script>
-    <script src="src/i18n/en-US.js"></script>
-    <script src="src/i18n/es-ES.js"></script>
-
-    <!-- i18n System -->
-    <script src="src/assets/js/i18n.js"></script>
-
-    <!-- Initialize i18n and then load main.js -->
-    <script>
-      // Wait for i18n to be fully initialized before loading main.js
-      document.addEventListener("DOMContentLoaded", function () {
-        // Ensure i18n is ready
-        if (window.i18n && window.i18n.applyTranslations) {
-          window.i18n.applyTranslations();
-          
-          // Load main.js after i18n is ready
-          const mainScript = document.createElement('script');
-          mainScript.src = 'src/assets/js/main.js';
-          document.head.appendChild(mainScript);
-        } else {
-          // Fallback: load main.js anyway after a short delay
-          setTimeout(() => {
-            const mainScript = document.createElement('script');
-            mainScript.src = 'src/assets/js/main.js';
-            document.head.appendChild(mainScript);
-          }, 200);
-        }
-      });
-    </script>
+    <!-- Main JavaScript -->
+    <script type="module" src="/src/scripts/entrypoints/index.page.js"></script>
   </body>
 </html>

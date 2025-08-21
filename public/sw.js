@@ -2,18 +2,17 @@
 const CACHE_NAME = 'face-nose-code-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
-  '/src/assets/css/main.css',
-  '/src/assets/css/animations.css',
-  '/src/assets/css/responsive.css',
-  '/src/assets/js/main.js',
-  '/src/assets/js/i18n.js',
-  '/src/assets/js/performance.js',
-  '/src/assets/js/form-validation.js',
+  '/src/pages/index.html',
+  '/src/styles/base.css',
+  '/src/styles/components.css',
+  '/src/scripts/entrypoints/index.page.js',
+  '/src/scripts/core/i18n.js',
+  '/src/scripts/core/performance.js',
+  '/src/scripts/features/forms/validate.js',
   '/src/i18n/pt-BR.js',
   '/src/i18n/en-US.js',
   '/src/i18n/es-ES.js',
-  '/src/assets/images/dr-calandrini.webp'
+  '/images/dr-calandrini.webp'
 ];
 
 // Install event - cache resources

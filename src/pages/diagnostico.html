@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Face & Nose Code</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/styles/base.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    
+    <style>
+        .diagnostic-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 2px solid #5E3CEA;
+            border-radius: 8px;
+            background: rgba(94, 60, 234, 0.05);
+        }
+        
+        .status-ok { color: #22c55e; }
+        .status-error { color: #ef4444; }
+        .status-warning { color: #f59e0b; }
+        
+        .test-result {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8" style="font-family: 'Cormorant Garamond', serif;">
+            🔍 Diagnóstico do Sistema Face & Nose Code
+        </h1>
+        
+        <!-- Teste de CSS -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">📄 Teste de CSS</h2>
+            <div id="css-tests">
+                <div class="test-result">Verificando arquivos CSS...</div>
+            </div>
+        </div>
+        
+        <!-- Teste de JavaScript -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">⚡ Teste de JavaScript</h2>
+            <div id="js-tests">
+                <div class="test-result">Verificando arquivos JavaScript...</div>
+            </div>
+        </div>
+        
+        <!-- Teste de Imagens -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">🖼️ Teste de Imagens</h2>
+            <div id="image-tests">
+                <div class="test-result">Verificando imagens...</div>
+            </div>
+        </div>
+        
+        <!-- Teste de i18n -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">🌐 Teste de Internacionalização</h2>
+            <div id="i18n-tests">
+                <div class="test-result">Verificando sistema i18n...</div>
+            </div>
+        </div>
+        
+        <!-- Teste de Componentes -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">🧩 Teste de Componentes</h2>
+            
+            <!-- Botão de teste -->
+            <button class="btn-luxury mb-4">Botão de Teste</button>
+            
+            <!-- Gradiente de teste -->
+            <div class="luxury-gradient p-4 rounded mb-4">
+                <p>Teste de gradiente luxury</p>
+            </div>
+            
+            <!-- Card de teste -->
+            <div class="card-luxury p-4 mb-4">
+                <p>Teste de card luxury</p>
+            </div>
+            
+            <!-- Formulário de teste -->
+            <form class="space-y-4">
+                <input type="text" placeholder="Teste de input" class="input-luxury w-full">
+                <button type="button" class="btn-luxury">Teste de Submit</button>
+            </form>
+        </div>
+        
+        <!-- Resumo -->
+        <div class="diagnostic-section">
+            <h2 class="text-2xl mb-4">📊 Resumo do Diagnóstico</h2>
+            <div id="summary">
+                <div class="test-result">Processando resultados...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts de teste -->
+    <script>
+        let testResults = {
+            css: [],
+            js: [],
+            images: [],
+            i18n: [],
+            overall: 'pending'
+        };
+        
+        // Teste de CSS
+        function testCSS() {
+            const cssTests = document.getElementById('css-tests');
+            cssTests.innerHTML = '';
+            
+            // Teste 1: Verificar se main.css carregou
+            const bodyStyle = window.getComputedStyle(document.body);
+            const bgColor = bodyStyle.backgroundColor;
+            const result1 = bgColor === 'rgb(3, 3, 13)' || bgColor.includes('rgb(3, 3, 13)');
+            addTestResult('css', 'main.css', result1, 'Background color correto');
+            
+            // Teste 2: Verificar se as fontes carregaram
+            const fontFamily = bodyStyle.fontFamily;
+            const result2 = fontFamily.includes('Montserrat');
+            addTestResult('css', 'Google Fonts', result2, 'Montserrat carregada');
+            
+            // Teste 3: Verificar se Tailwind funciona
+            const testDiv = document.createElement('div');
+            testDiv.className = 'text-blue-500';
+            document.body.appendChild(testDiv);
+            const tailwindColor = window.getComputedStyle(testDiv).color;
+            document.body.removeChild(testDiv);
+            const result3 = tailwindColor === 'rgb(59, 130, 246)';
+            addTestResult('css', 'Tailwind CSS', result3, 'Classes funcionando');
+            
+            // Teste 4: Verificar classes luxury
+            const testLuxury = document.querySelector('.btn-luxury');
+            const luxuryStyle = window.getComputedStyle(testLuxury);
+            const result4 = luxuryStyle.background.includes('linear-gradient') || luxuryStyle.backgroundImage.includes('linear-gradient');
+            addTestResult('css', 'Luxury Components', result4, 'Estilos luxury aplicados');
+        }
+        
+        // Teste de JavaScript
+        function testJS() {
+            const jsTests = document.getElementById('js-tests');
+            jsTests.innerHTML = '';
+            
+            // Teste 1: Verificar se main.js existe
+            const result1 = typeof window.initializeAnimations === 'function';
+            addTestResult('js', 'main.js', result1, 'Funções principais carregadas');
+            
+            // Teste 2: Verificar se i18n.js existe
+            const result2 = typeof window.I18nSystem === 'function';
+            addTestResult('js', 'i18n.js', result2, 'Sistema i18n carregado');
+            
+            // Teste 3: Verificar se backend-config.js existe
+            const result3 = typeof window.BACKEND_CONFIG === 'object';
+            addTestResult('js', 'backend-config.js', result3, 'Configurações carregadas');
+        }
+        
+        // Teste de imagens
+        function testImages() {
+            const imageTests = document.getElementById('image-tests');
+            imageTests.innerHTML = '';
+            
+            // Teste da imagem principal
+            const img = new Image();
+            img.onload = function() {
+                addTestResult('images', 'dr-calandrini.webp', true, 'Imagem principal carregada');
+                updateSummary();
+            };
+            img.onerror = function() {
+                addTestResult('images', 'dr-calandrini.webp', false, 'Erro ao carregar imagem principal');
+                updateSummary();
+            };
+            img.src = '/images/dr-calandrini.webp';
+        }
+        
+        // Teste de i18n
+        function testI18n() {
+            const i18nTests = document.getElementById('i18n-tests');
+            i18nTests.innerHTML = '';
+            
+            // Teste 1: Verificar se arquivos de tradução existem
+            const result1 = typeof window.translations_pt === 'object';
+            addTestResult('i18n', 'pt-BR.js', result1, 'Traduções PT carregadas');
+            
+            const result2 = typeof window.translations_en === 'object';
+            addTestResult('i18n', 'en-US.js', result2, 'Traduções EN carregadas');
+            
+            const result3 = typeof window.translations_es === 'object';
+            addTestResult('i18n', 'es-ES.js', result3, 'Traduções ES carregadas');
+            
+            // Teste 2: Verificar se sistema i18n funciona
+            const result4 = window.i18n && typeof window.i18n.applyTranslations === 'function';
+            addTestResult('i18n', 'Sistema i18n', result4, 'Sistema funcionando');
+        }
+        
+        function addTestResult(category, test, passed, description) {
+            const container = document.getElementById(category + '-tests');
+            const div = document.createElement('div');
+            div.className = 'test-result';
+            
+            const status = passed ? '✅' : '❌';
+            const statusClass = passed ? 'status-ok' : 'status-error';
+            
+            div.innerHTML = `<span class="${statusClass}">${status} ${test}</span>: ${description}`;
+            container.appendChild(div);
+            
+            testResults[category].push({ test, passed, description });
+        }
+        
+        function updateSummary() {
+            const summary = document.getElementById('summary');
+            const totalTests = testResults.css.length + testResults.js.length + testResults.images.length + testResults.i18n.length;
+            const passedTests = [
+                ...testResults.css,
+                ...testResults.js,
+                ...testResults.images,
+                ...testResults.i18n
+            ].filter(t => t.passed).length;
+            
+            const percentage = Math.round((passedTests / totalTests) * 100);
+            
+            let overallStatus = 'status-ok';
+            let statusText = 'Excelente';
+            
+            if (percentage < 70) {
+                overallStatus = 'status-error';
+                statusText = 'Crítico';
+            } else if (percentage < 90) {
+                overallStatus = 'status-warning';
+                statusText = 'Atenção';
+            }
+            
+            summary.innerHTML = `
+                <div class="test-result">
+                    <h3 class="text-xl mb-2">Status Geral: <span class="${overallStatus}">${statusText}</span></h3>
+                    <p>Testes aprovados: <strong>${passedTests}/${totalTests}</strong> (${percentage}%)</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            if (percentage === 100) {
+                summary.innerHTML += `
+                    <div class="test-result status-ok mt-4">
+                        🎉 Todos os testes passaram! O sistema está funcionando perfeitamente.
+                    </div>
+                `;
+            } else {
+                summary.innerHTML += `
+                    <div class="test-result status-warning mt-4">
+                        ⚠️ Alguns problemas foram encontrados. Verifique os testes falhados acima.
+                    </div>
+                `;
+            }
+        }
+        
+        // Executar todos os testes
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                testCSS();
+                testJS();
+                testImages();
+                testI18n();
+                
+                // Aguardar um pouco para imagens carregarem
+                setTimeout(updateSummary, 2000);
+            }, 500);
+        });
+    </script>
+    
+    <!-- Carregar scripts do sistema -->
+    <script src="/src/i18n/pt-BR.js"></script>
+    <script src="/src/i18n/en-US.js"></script>
+    <script src="/src/i18n/es-ES.js"></script>
+    <script src="/src/scripts/core/backend-config.js"></script>
+    <script src="/src/scripts/core/i18n.js"></script>
+    <script src="/src/scripts/entrypoints/index.page.js" type="module"></script>
+</body>
+</html>
