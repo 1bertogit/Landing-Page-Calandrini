@@ -318,7 +318,7 @@
             gtag('event', eventName, enrichedParameters);
 
             if (this.config.debugMode) {
-                console.log('Analytics Event:', eventName, enrichedParameters);
+                // Analytics event tracked
             }
         }
 

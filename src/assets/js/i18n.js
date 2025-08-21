@@ -29,7 +29,7 @@ class I18nSystem {
             // Mark as initialized
             this.initialized = true;
             
-            console.log(`i18n System initialized with language: ${this.currentLanguage}`);
+            // i18n System initialized
         } catch (error) {
             console.error('Error initializing i18n system:', error);
         }

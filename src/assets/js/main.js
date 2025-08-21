@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Listen for language changes
     window.addEventListener('languageChanged', function(e) {
-        console.log('Language changed to:', e.detail.language);
         // Reinitialize dynamic content with new language
         initializeDynamicContent();
     });

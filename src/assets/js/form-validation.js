@@ -434,7 +434,7 @@
                 
                 // Para desenvolvimento - simular sucesso
                 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                    console.log('Development mode - Form data:', data);
+                    // Development mode - simulating success
                     return { success: true, message: 'Lead capturado com sucesso (modo desenvolvimento)' };
                 }
                 

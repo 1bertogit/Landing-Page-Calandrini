@@ -105,7 +105,7 @@ class BackendIntegration {
             }
             
             const result = await response.json();
-            console.log('Lead sent successfully:', result);
+            // Lead sent successfully
             
             // Enviar para outras integrações em paralelo
             this.sendToSecondaryIntegrations(enrichedData);
