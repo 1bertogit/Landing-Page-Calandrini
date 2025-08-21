@@ -84,7 +84,7 @@
             this.fields = {};
             this.errors = {};
             this.isSubmitting = false;
-            this.currentLang = window.i18n?.currentLanguage || 'pt-BR';
+            this.currentLang = (window.i18n && window.i18n.currentLanguage) ? window.i18n.currentLanguage : 'pt-BR';
             
             this.init();
         }

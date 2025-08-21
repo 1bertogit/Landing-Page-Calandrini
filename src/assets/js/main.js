@@ -554,7 +554,7 @@ function initializeFormHandlers() {
             let value = e.target.value.replace(/\D/g, '');
             
             // Get current language for phone formatting
-            const currentLang = window.i18n ? window.i18n.currentLanguage : 'pt-BR';
+            const currentLang = (window.i18n && typeof window.i18n.getCurrentLanguage === 'function') ? window.i18n.getCurrentLanguage() : 'pt-BR';
             
             switch(currentLang) {
                 case 'pt-BR':
@@ -603,7 +603,7 @@ function initializeFormHandlers() {
                     timestamp: new Date().toISOString(),
                     source: 'landing-page',
                     page: 'index.html',
-                    language: window.i18n?.getCurrentLanguage() || 'pt-BR',
+                    language: (window.i18n && typeof window.i18n.getCurrentLanguage === 'function') ? window.i18n.getCurrentLanguage() : 'pt-BR',
                     utm_source: new URLSearchParams(window.location.search).get('utm_source'),
                     utm_medium: new URLSearchParams(window.location.search).get('utm_medium'),
                     utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign')
@@ -639,7 +639,7 @@ function initializeFormHandlers() {
                 // Redirect to thank you page after short delay
                 setTimeout(() => {
                     // Preserve language parameter in redirect
-                    const currentLang = window.i18n?.getCurrentLanguage();
+                    const currentLang = (window.i18n && typeof window.i18n.getCurrentLanguage === 'function') ? window.i18n.getCurrentLanguage() : 'pt-BR';
                     const langParam = currentLang && currentLang !== 'pt-BR' ? `?lang=${currentLang}` : '';
                     window.location.href = `obrigado.html${langParam}`;
                 }, 1500);

@@ -80,26 +80,7 @@
     <link rel="stylesheet" href="src/assets/css/main.css" />
     <link rel="stylesheet" href="src/assets/css/animations.css" />
 
-    <!-- i18n Translation Files -->
-    <script src="src/i18n/pt-BR.js"></script>
-    <script src="src/i18n/en-US.js"></script>
-    <script src="src/i18n/es-ES.js"></script>
 
-    <!-- i18n System -->
-    <script src="src/assets/js/i18n.js"></script>
-
-    <!-- Initialize i18n immediately -->
-    <script>
-      // Ensure i18n is initialized and applies translations as soon as possible
-      document.addEventListener("DOMContentLoaded", function () {
-        // Small delay to ensure all scripts are loaded
-        setTimeout(function () {
-          if (window.i18n && window.i18n.applyTranslations) {
-            window.i18n.applyTranslations();
-          }
-        }, 100);
-      });
-    </script>
   </head>
   <body class="relative" data-animated="false">
     <div class="texture-overlay"></div>
@@ -1422,7 +1403,35 @@
     <!-- Analytics & Tracking -->
     <script src="src/assets/js/analytics.js"></script>
     
-    <!-- Main JavaScript -->
-    <script src="src/assets/js/main.js"></script>
+    <!-- i18n Translation Files -->
+    <script src="src/i18n/pt-BR.js"></script>
+    <script src="src/i18n/en-US.js"></script>
+    <script src="src/i18n/es-ES.js"></script>
+
+    <!-- i18n System -->
+    <script src="src/assets/js/i18n.js"></script>
+
+    <!-- Initialize i18n and then load main.js -->
+    <script>
+      // Wait for i18n to be fully initialized before loading main.js
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ensure i18n is ready
+        if (window.i18n && window.i18n.applyTranslations) {
+          window.i18n.applyTranslations();
+          
+          // Load main.js after i18n is ready
+          const mainScript = document.createElement('script');
+          mainScript.src = 'src/assets/js/main.js';
+          document.head.appendChild(mainScript);
+        } else {
+          // Fallback: load main.js anyway after a short delay
+          setTimeout(() => {
+            const mainScript = document.createElement('script');
+            mainScript.src = 'src/assets/js/main.js';
+            document.head.appendChild(mainScript);
+          }, 200);
+        }
+      });
+    </script>
   </body>
 </html>
