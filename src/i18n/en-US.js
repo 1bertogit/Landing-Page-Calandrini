@@ -225,7 +225,7 @@ const translations_en = {
                 label: "Serious Complications"
             }
         },
-        validation: "METHOD VALIDATED BY +500 SURGERIES"
+        validation: "METHOD VALIDATED BY 227+ SURGERIES"
     },
 
     // Final CTA Section

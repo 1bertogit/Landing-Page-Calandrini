@@ -225,7 +225,7 @@ const translations_es = {
                 label: "Complicaciones Graves"
             }
         },
-        validation: "MÉTODO VALIDADO POR +500 CIRUGÍAS"
+        validation: "MÉTODO VALIDADO POR 227+ CIRUGÍAS"
     },
 
     // Final CTA Section

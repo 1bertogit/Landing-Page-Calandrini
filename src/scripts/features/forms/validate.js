@@ -92,7 +92,7 @@
         init() {
             this.setupFields();
             this.attachListeners();
-            this.addAdvancedFields();
+            // this.addAdvancedFields(); // DESABILITADO - mantém apenas os 3 campos básicos
         }
 
         setupFields() {
@@ -357,7 +357,6 @@
 
             // Validar todos os campos
             if (!this.validateAll()) {
-                this.showNotification('Por favor, corrija os erros no formulário', 'error');
                 return;
             }
 
@@ -447,16 +446,10 @@
             this.form.reset();
             
             // Mostrar mensagem de sucesso
-            this.showNotification('Inscrição realizada com sucesso! Redirecionando...', 'success');
+            this.showNotification('Inscrição realizada com sucesso!', 'success');
             
             // Tracking de conversão
             this.trackConversion();
-            
-            // Redirecionar para página de obrigado
-            setTimeout(() => {
-                const redirectUrl = response.redirect_url || '/obrigado.html';
-                window.location.href = redirectUrl;
-            }, 1500);
         }
 
         handleError(errorType) {

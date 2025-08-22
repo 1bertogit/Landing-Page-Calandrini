@@ -323,9 +323,9 @@ class I18nSystem {
     // Get display name for language
     getLanguageName(langCode) {
         const names = {
-            'pt-BR': '🇧🇷 Português',
-            'en-US': '🇺🇸 English',
-            'es-ES': '🇪🇸 Español'
+            'pt-BR': '🇧🇷',
+            'en-US': '🇺🇸',
+            'es-ES': '🇪🇸'
         };
         return names[langCode] || langCode;
     }

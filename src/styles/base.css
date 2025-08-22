@@ -535,17 +535,20 @@ body::before {
     background: transparent;
     color: #C7C2DF;
     border: none;
-    padding: 5px 10px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    padding: 8px 12px;
+    font-size: 18px;
     cursor: pointer;
     outline: none;
+    min-width: 50px;
+    text-align: center;
 }
 
 .language-selector select option {
     background: #03030D;
     color: #C7C2DF;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
 }
 
 .language-flag {
